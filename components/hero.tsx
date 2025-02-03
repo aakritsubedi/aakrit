@@ -6,7 +6,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-background/80">
+    <section className="relative h-[55vh] md:h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-background/80">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <motion.div

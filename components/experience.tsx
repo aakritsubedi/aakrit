@@ -16,24 +16,24 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 const experiences = [
   {
     company: "Naamche Inc",
-    position: "Tech Lead",
+    position: "Engineering Manager",
     period: "Sept 2021 - Present",
     description: [
-      "Lead the engineering team, ensuring efficient development processes, mentorship, and alignment with business goals.",
-      "Oversee the entire product development lifecycle, from ideation to deployment, focusing on scalability and performance.",
-      "Drive architectural decisions across backend, frontend, and infrastructure to ensure robust, maintainable systems.",
-      "Collaborate closely with stakeholders and customers to refine product features and enhance user experience.",
-      "Streamline Agile development by facilitating sprint planning, daily stand-ups, and retrospective meetings.",
-      "Actively contribute to hands-on development when required, ensuring high-quality code and best practices.",
+      "Lead the engineering team, ensuring efficient development, mentorship, and business alignment",
+      "Oversee product lifecycle from ideation to deployment, prioritizing scalability and performance",
+      "Drive architectural decisions for backend, frontend, and infrastructure to build robust systems",
+      "Collaborate with stakeholders to refine features and enhance user experience",
+      "Optimize Agile workflows through sprint planning, stand-ups, and retrospectives",
+      "Contribute hands-on to development, maintaining high code quality and best practices",
     ],
     additionalInfo: {
       title: "AI Chat  – Agentic AI Chatbot",
       subtitle: "Sister Company of reAlpha",
       description: [
-        "Led the design and development of an AI-powered chatbot, integrating advanced LLM enhancements for improved responses.",
-        "Managed the full AI Chat ecosystem – backend, frontend, and infrastructure – to deliver a seamless user experience.",
-        "Conducted stakeholder meetings and client demos, ensuring seamless onboarding and adoption of AI Chat.",
-        "Played a key role in onboarding new clients and expanding the AI Chat user base.",
+        "Designed and developed an AI-powered chatbot with advanced LLM enhancements",
+        "Managed the full AI Chat ecosystem, ensuring a seamless user experience",
+        "Led stakeholder meetings and client demos for smooth onboarding and adoption",
+        "Played a key role in expanding the AI Chat user base",
       ],
     },
     techStack: [
@@ -52,19 +52,19 @@ const experiences = [
     position: "Software Engineer II",
     period: "Oct 2019 - March 2022",
     description: [
-      "Excelled in application development with minimal supervision, demonstrating increased autonomy in projects.",
-      "Engaged in project planning discussions, exploring foundational technologies, and developing scalable applications.",
-      "Mentored new team members and trained intern batches on building API systems using Node.js.",
-      "Participated in conducting interviews for software engineers and interns.",
+      "Developed applications independently, showcasing strong autonomy",
+      "Led project planning and built scalable applications with foundational technologies",
+      "Mentored new team members and interns in API development with Node.js",
+      "Assisted in interviewing software engineers and interns",
     ],
     additionalInfo: {
       title: "Internship Coordinator",
       subtitle: " Data Internship Program",
       description: [
-        "Led the internship program by managing mentors and ensuring smooth training sessions.",
-        "Interviewed candidates and contributed to the selection process for the internship batch.",
-        "Provided mentorship and guidance to interns, helping them develop technical and problem-solving skills.",
-        "Oversaw intern performance, offering feedback and support to enhance their learning experience.",
+        "Led the internship program, managing mentors and training sessions",
+        "Interviewed and selected candidates for the internship batch",
+        "Mentored interns, fostering technical and problem-solving skills",
+        "Monitored performance, providing feedback for growth",
       ],
     },
     techStack: ["Node.js", "React", "Vue", "REST API", "PostgreSQL"],
@@ -73,7 +73,7 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section className="p-24 bg-muted/30" id="experience">
+    <section className="py-16 md:p-24 bg-muted/30" id="experience">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -113,11 +113,10 @@ function ExperienceCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
     >
-      <Card>
+      <Card className="border-none">
         <CardHeader>
-          <CardTitle>
-            {experience.position} at {experience.company}
-          </CardTitle>
+          <CardTitle>{experience.position}</CardTitle>
+          <CardDescription>{experience.company}</CardDescription>
           <CardDescription>{experience.period}</CardDescription>
         </CardHeader>
         <CardContent>
@@ -145,9 +144,9 @@ function ExperienceCard({
                   <CardTitle className="text-lg">
                     {experience.additionalInfo.title}
                   </CardTitle>
-                  <span className="text-muted-foreground">
+                  <CardDescription className="text-muted-foreground">
                     {experience.additionalInfo.subtitle}
-                  </span>
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="list-disc pl-5 space-y-2">
