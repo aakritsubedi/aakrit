@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "@/components/mode-toggle";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export function Navigation() {
   return (
@@ -24,13 +25,17 @@ export function Navigation() {
             <NavigationMenuItem>
               <NavigationMenuLink className="flex items-center gap-2 size-14">
                 <Image
-                  src="/logo.png"
+                  src={
+                    useTheme().theme === "dark"
+                      ? "/logo-light.png"
+                      : "/logo.png"
+                  }
                   alt="Aakrit Subedi"
                   width={64}
                   height={64}
                   className="rounded-full"
                 />
-                <h1 className="hidden">AAkrit Subedi</h1>
+                <h1 className="hidden">Aakrit Subedi</h1>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>

@@ -60,14 +60,14 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="relative h-[400px] w-[400px]">
+            <div className="relative  md:h-[400px] md:w-[400px]">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20" />
               <img
                 src="https://avatars.githubusercontent.com/u/18993024?s=400&u=24360a886bff9c7bc00f2b58af39bb09833777d6&v=4"
                 alt="Profile"
                 className="absolute inset-0 object-cover rounded-full"
-                width={450}
-                height={450}
+                width={400}
+                height={400}
               />
             </div>
           </motion.div>

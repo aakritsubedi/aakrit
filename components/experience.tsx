@@ -83,7 +83,7 @@ export function Experience() {
           className="space-y-4 mb-12"
         >
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            👨🏻‍💻 Professional Experience
+            👨🏻‍💻 Experience
           </h2>
           <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             My journey in software development and team leadership.
