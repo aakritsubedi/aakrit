@@ -27,7 +27,7 @@ const projects = [
   {
     title: "NEPSE AI",
     description: "AI-powered Nepal Stock Exchange analysis automation bot",
-    tags: ["Nodejs", "Airflow", "Postgres"],
+    tags: ["Nodejs", "OpenAI", "Postgres"],
     link: "https://instagram.com/nepse.ai",
   },
 ];

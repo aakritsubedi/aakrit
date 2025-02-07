@@ -9,6 +9,13 @@ import Link from "next/link";
 
 const posts = [
   {
+    title: "NEPSE AI: Automating Stock Market Insights on Instagram",
+    date: "Feb 2025",
+    excerpt:
+      "From daily market updates to weekly analysis and investor newsletters, NEPSE AI ensures real-time insights, engaging content, and seamless automation.",
+    link: "https://medium.com/@subediaakrit/nepse-ai-automating-stock-market-insights-on-instagram-677d5048fd8d",
+  },
+  {
     title: "Using free resources for uptime monitor and status page",
     date: "Sept 2024",
     excerpt:
