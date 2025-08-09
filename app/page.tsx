@@ -1,19 +1,15 @@
-import { Hero } from "@/components/hero";
-import { Experience } from "@/components/experience";
-import { Projects } from "@/components/projects";
-import { Blog } from "@/components/blog";
-import { Contact } from "@/components/contact";
-import { Education } from "@/components/education";
+import Intro from "@/components/about/intro";
+import PhotoGallery from "@/components/about/photos";
+import Information from "@/components/about/info";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Hero />
-      <Experience />
-      <Education />
-      <Projects />
-      <Blog />
-      <Contact />
-    </div>
+    <main className="min-h-[100dvh]">
+      <section className="container mx-auto px-4">
+        <Intro />
+        <PhotoGallery />
+        <Information />
+      </section>
+    </main>
   );
 }
