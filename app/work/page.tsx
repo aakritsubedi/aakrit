@@ -1,3 +1,32 @@
+export const metadata = {
+  title: "Work Experience | Aakrit Subedi",
+  description:
+    "Professional experience, roles, and achievements of Aakrit Subedi as a software engineer and manager.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Work Experience | Aakrit Subedi",
+    description:
+      "Professional experience, roles, and achievements of Aakrit Subedi as a software engineer and manager.",
+    url: "https://aakritsubedi.com.np/work",
+    images: [
+      {
+        url: "https://aakritsubedi.com.np/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Aakrit Subedi - Software Engineer Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Work Experience | Aakrit Subedi",
+    description:
+      "Professional experience, roles, and achievements of Aakrit Subedi as a software engineer and manager.",
+    creator: "@SubediAakrit",
+    images: ["https://aakritsubedi.com.np/og-image.png"],
+  },
+};
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import React from "react";

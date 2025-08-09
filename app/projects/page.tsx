@@ -1,3 +1,32 @@
+export const metadata = {
+  title: "Projects | Aakrit Subedi",
+  description:
+    "Portfolio of software projects and products built by Aakrit Subedi.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Projects | Aakrit Subedi",
+    description:
+      "Portfolio of software projects and products built by Aakrit Subedi.",
+    url: "https://aakritsubedi.com.np/projects",
+    images: [
+      {
+        url: "https://aakritsubedi.com.np/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Aakrit Subedi - Software Engineer Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Aakrit Subedi",
+    description:
+      "Portfolio of software projects and products built by Aakrit Subedi.",
+    creator: "@SubediAakrit",
+    images: ["https://aakritsubedi.com.np/og-image.png"],
+  },
+};
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";

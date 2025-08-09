@@ -1,3 +1,29 @@
+export const metadata = {
+  title: "Education | Aakrit Subedi",
+  description: "Academic background, degrees, and projects of Aakrit Subedi.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Education | Aakrit Subedi",
+    description: "Academic background, degrees, and projects of Aakrit Subedi.",
+    url: "https://aakritsubedi.com.np/education",
+    images: [
+      {
+        url: "https://aakritsubedi.com.np/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Aakrit Subedi - Software Engineer Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Education | Aakrit Subedi",
+    description: "Academic background, degrees, and projects of Aakrit Subedi.",
+    creator: "@SubediAakrit",
+    images: ["https://aakritsubedi.com.np/og-image.png"],
+  },
+};
 import {
   Accordion,
   AccordionItem,
