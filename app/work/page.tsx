@@ -29,6 +29,7 @@ export const metadata = {
 };
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 function WorkPage() {
@@ -196,7 +197,9 @@ function WorkPage() {
             variant="ghost"
             className="bg-gray-100 text-gray-600 px-4 py-3 rounded-full shadow-2xl border border-gray-300"
           >
-            View Resume
+            <Link href="/AakritSubedi.pdf" target="_blank" download>
+              View Resume
+            </Link>
           </Button>
         </div>
       </section>

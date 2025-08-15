@@ -29,6 +29,7 @@ export function Navigation() {
     { href: "/work", label: "Work" },
     { href: "/education", label: "Education" },
     { href: "/projects", label: "Projects" },
+    { href: "/AakritSubedi.pdf", label: "CV", target: "_blank" },
   ];
 
   return (
@@ -58,6 +59,7 @@ export function Navigation() {
                     ? "font-medium text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 }
+                target={link.target}
               >
                 {link.label}
               </Link>
