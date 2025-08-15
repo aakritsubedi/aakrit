@@ -108,10 +108,10 @@ function EducationPage() {
               aria-labelledby={`education-${index}`}
               className="space-y-6"
             >
-              <div className="flex justify-between items-center">
+              <div className="flex flex-col-reverse md:flex-row gap-2 md:justify-between md:items-center">
                 <p
                   id={`education-${index}`}
-                  className="text-xl text-muted-foreground"
+                  className="text-lg md:text-xl text-muted-foreground"
                 >
                   {education.title}
                 </p>
@@ -130,7 +130,7 @@ function EducationPage() {
                       alt={`${education.instituteName} logo`}
                     />
                   </Avatar>
-                  <h3 className="text-lg font-semibold">
+                  <h3 className="md:text-lg font-semibold">
                     {education.instituteName}
                   </h3>
                 </div>
@@ -143,7 +143,7 @@ function EducationPage() {
 
                 <div className="flex flex-col gap-1">
                   {education.academicProjects && (
-                    <p className="text-gray-500">## Academic Projects</p>
+                    <p className="text-gray-500 text-lg">Academic Projects</p>
                   )}
                   <Accordion
                     type="single"
