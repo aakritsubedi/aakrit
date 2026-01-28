@@ -35,6 +35,14 @@ import React from "react";
 function ProjectPage() {
   const blogs = [
     {
+      title: "Linux Command Toolkit for Developers",
+      thumbnail:
+        "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*1MFz11p95teVGCuL4IXiYQ.png",
+      description:
+        "Helps you navigating file systems, managing processes, or debugging servers, these core commands form the backbone of efficient terminal work.",
+      link: "https://medium.com/@subediaakrit/linux-command-c59f4eb32dab",
+    },
+    {
       title: "NEPSE AI: Automating Stock Market Insights on Instagram",
       thumbnail:
         "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*0kgv6FHpxwNlsr14NRkDcw.png",
@@ -112,6 +120,7 @@ function ProjectPage() {
               className="inline-block text-sm font-medium text-foreground"
               target="_blank"
               rel="noopener noreferrer"
+              key={project.title}
             >
               <div
                 key={project.title}
@@ -159,13 +168,14 @@ function ProjectPage() {
           </div>
         </div>
 
-        <div className="grid grid:cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {blogs.map((blog) => (
             <Link
               href={blog.link}
               className="inline-block text-sm font-medium text-foreground"
               target="_blank"
               rel="noopener noreferrer"
+              key={blog.title}
             >
               <div
                 key={blog.title}
