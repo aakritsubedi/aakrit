@@ -27,169 +27,172 @@ export const metadata = {
     images: ["https://aakritsubedi.com.np/og-image.png"],
   },
 };
-import { Separator } from "@/components/ui/separator";
+import { blogs, projects, type Project } from "@/config/projects";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-function ProjectPage() {
-  const blogs = [
-    {
-      title: "Linux Command Toolkit for Developers",
-      thumbnail:
-        "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*1MFz11p95teVGCuL4IXiYQ.png",
-      description:
-        "Helps you navigating file systems, managing processes, or debugging servers, these core commands form the backbone of efficient terminal work.",
-      link: "https://medium.com/@subediaakrit/linux-command-c59f4eb32dab",
-    },
-    {
-      title: "NEPSE AI: Automating Stock Market Insights on Instagram",
-      thumbnail:
-        "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*0kgv6FHpxwNlsr14NRkDcw.png",
-      description:
-        "From daily market updates to weekly analysis and investor newsletters, NEPSE AI seamless real-time insights, engaging content.",
-      link: "https://medium.com/@subediaakrit/using-free-resources-for-uptime-monitor-and-status-page-06b60ce53c08",
-    },
-    {
-      title: "Using free resources for uptime monitor and status page",
-      thumbnail:
-        "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*VsrkqnxhqECXwjWfyjQvjw.png",
-      description:
-        "A comprehensive guide to setting up an uptime monitor and status page using free resources.",
-      link: "https://medium.com/@subediaakrit/using-free-resources-for-uptime-monitor-and-status-page-06b60ce53c08",
-    },
-  ];
+/** Zero-padded index for the "01 / slug" rail above each entry */
+function indexLabel(index: number) {
+  return String(index + 1).padStart(2, "0");
+}
 
-  const projects = [
-    {
-      title: "BCTNotes",
-      logo: "/projects/bctnotes.png",
-      thumbnail: "/projects/bctnotes-thumbnail.png",
-      description:
-        "A resource sharing platform for Computer Engineering Students, where students can share class notes, past papers, and study materials.",
-      techStacks: ["NEXT Js", "TypeScript", "Nest Js", "LLM AI"],
-      link: "https://www.aakritsubedi9.com.np",
-    },
-    {
-      title: "Sheets2API",
-      logo: "/projects/sheets2api.png",
-      thumbnail: "/projects/sheets2api-thumbnail.png",
-      description:
-        "Turn Google Sheets into powerful RESTful APIs. Build MVPs faster without complex backend setup.",
-      techStacks: ["NEXT Js", "TypeScript", "Nest Js", "LLM AI"],
-      link: "https://sheets2api.pro/",
-    },
-    {
-      title: "Plan OS",
-      logo: "/projects/planOs.png",
-      thumbnail: "/projects/planOs-thumbnail.webp",
-      description:
-        "Plan OS is simple task management app that will help you manage your time and let you focus on any tasks such as study, or coding.",
-      techStacks: ["NEXT Js", "TypeScript", "Nest Js", "LLM AI"],
-      link: "https://plan-os.space/",
-    },
-    {
-      title: "NEPSE AI",
-      logo: "/projects/nepseai.jpg",
-      thumbnail: "/projects/nepseai-thumbnail.png",
-      description:
-        "NEPSE AI is a platform that provides automated stock market insights, helping investors make informed decisions.",
-      techStacks: ["NEXT Js", "TypeScript", "Nest Js", "LLM AI"],
-      link: "https://www.instagram.com/nepse.ai/",
-    },
-  ];
+function ProjectEntry({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
+  const headingId = `project-${project.slug}`;
 
   return (
+    <article aria-labelledby={headingId} className="scroll-mt-24">
+      {/* Index rail — 01 / murmur */}
+      <div className="flex items-baseline justify-between gap-4 border-b border-foreground/15 pb-2 font-mono text-[11px] text-muted-foreground">
+        <span>
+          {indexLabel(index)} <span className="px-1 opacity-40">/</span>
+          <span className="text-foreground">{project.slug}</span>
+        </span>
+        {project.status ? <span>{project.status}</span> : null}
+      </div>
+
+      <div className="mt-6 flex items-center gap-3">
+        {project.logo ? (
+          <Image
+            src={project.logo}
+            alt=""
+            width={32}
+            height={32}
+            className="h-8 w-8 shrink-0 rounded-md object-contain"
+          />
+        ) : null}
+        <h2
+          id={headingId}
+          className="text-2xl font-semibold tracking-tight sm:text-3xl"
+        >
+          {project.title}
+        </h2>
+      </div>
+
+      <p className="mt-4 max-w-xl font-light leading-relaxed text-muted-foreground">
+        {project.description}
+      </p>
+
+      {project.link ? (
+        <Link
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-5 inline-flex items-center font-mono text-xs text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+        >
+          visit {project.slug}
+          <ArrowUpRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        </Link>
+      ) : null}
+
+      {/* Screenshot */}
+      {project.thumbnail ? (
+        <div className="mt-8 overflow-hidden rounded-lg border border-foreground/15 bg-muted/30">
+          <Image
+            src={project.thumbnail}
+            alt={`${project.title} screenshot`}
+            width={1600}
+            height={900}
+            className="aspect-[16/9] w-full object-cover object-top"
+          />
+        </div>
+      ) : (
+        <div className="mt-8 flex aspect-[16/9] w-full items-center justify-center rounded-lg border border-dashed border-foreground/15 bg-muted/20">
+          <span className="font-mono text-[11px] text-muted-foreground/70">
+            screenshot pending
+          </span>
+        </div>
+      )}
+
+      {project.techStacks?.length ? (
+        <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] text-muted-foreground/70">
+          {project.techStacks.map((tech) => (
+            <li key={tech}>{tech}</li>
+          ))}
+        </ul>
+      ) : null}
+    </article>
+  );
+}
+
+function ProjectPage() {
+  return (
     <main className="min-h-[100dvh]">
-      <section className="container mx-auto max-w-3xl px-4 py-10 pb-20 flex flex-col gap-4">
+      <section className="container mx-auto max-w-3xl px-4 py-14 pb-24 sm:px-6">
         <div className="flex gap-4 flex-col">
-          <span className="text-7xl">💻</span>
-          <div>
-            <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
-            <span className="text-gray-500">
-              Projects I work on during weekends to explore new technologies and
-              solve real problems.
-            </span>
-          </div>
+          {/* <span className="text-7xl">💻</span> */}
+          <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {projects.map((project) => (
-            <Link
-              href={project.link}
-              className="inline-block text-sm font-medium text-foreground"
-              target="_blank"
-              rel="noopener noreferrer"
-              key={project.title}
-            >
-              <div
-                key={project.title}
-                className="rounded-lg border border-muted p-4 transition hover:border-gray-200 flex flex-col gap-3"
-              >
-                <div className="flex items-center gap-2">
-                  <Image
-                    src={project.logo}
-                    alt={project.title}
-                    width={25}
-                    height={25}
-                    className="rounded-sm"
-                  />
-                  <h2 className="text-lg font-semibold">{project.title}</h2>
-                </div>
-                <Image
-                  src={project.thumbnail}
-                  alt={project.title}
-                  width={600}
-                  height={400}
-                  className="rounded-md"
-                />
-                <p className="text-sm text-muted-foreground font-normal">
-                  {project.description}
-                </p>
-              </div>
-            </Link>
+        {/* Sheet header — ties the page to the rest of the site */}
+        <div className="mt-6 flex items-baseline justify-between border-b border-foreground/15 pb-2 font-mono text-[11px] text-muted-foreground">
+          <span className="text-foreground">side projects</span>
+          <span>
+            {String(projects.length).padStart(2, "0")} entries
+          </span>
+        </div>
+
+        <p className="mt-8 max-w-2xl font-light leading-relaxed text-muted-foreground">
+          Things I build on weekends to try out new technologies and solve
+          problems I keep running into. Some are live and used by other people,
+          some are still half-finished.
+        </p>
+
+        <div className="mt-16 space-y-20">
+          {projects.map((project, index) => (
+            <ProjectEntry
+              key={project.slug}
+              project={project}
+              index={index}
+            />
           ))}
         </div>
       </section>
 
-      <div className="flex items-center justify-center">
-        <Separator className="w-40" />
-      </div>
-
-      <section className="container mx-auto max-w-3xl px-4 py-10 pb-20 flex flex-col gap-4">
+      <section className="container mx-auto max-w-3xl px-4 py-14 pb-24 sm:px-6">
         <div className="flex gap-4 flex-col">
-          <span className="text-7xl">✍️</span>
-          <div>
-            <h1 className="text-3xl font-semibold tracking-tight">Blogs</h1>
-            <span className="text-gray-500">
-              Sharing my thoughts and experiences in software development and
-              technology.
-            </span>
-          </div>
+          {/* <span className="text-7xl">✍️</span> */}
+          <h1 className="text-3xl font-semibold tracking-tight">Blogs</h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="mt-6 flex items-baseline justify-between border-b border-foreground/15 pb-2 font-mono text-[11px] text-muted-foreground">
+          <span className="text-foreground">writing</span>
+          <span>medium</span>
+        </div>
+
+        <p className="mt-8 max-w-2xl font-light leading-relaxed text-muted-foreground">
+          Notes on what I&apos;ve built and what broke along the way.
+        </p>
+
+        <div className="mt-12 divide-y divide-foreground/15 border-t border-foreground/15">
           {blogs.map((blog) => (
             <Link
               href={blog.link}
-              className="inline-block text-sm font-medium text-foreground"
+              className="group flex flex-col gap-4 py-6 sm:flex-row"
               target="_blank"
               rel="noopener noreferrer"
               key={blog.title}
             >
-              <div
-                key={blog.title}
-                className="rounded-lg border border-muted p-4 transition hover:border-gray-200 flex flex-col gap-3"
-              >
-                <h2 className="text-lg font-semibold">{blog.title}</h2>
-                <Image
-                  src={blog.thumbnail}
-                  alt={blog.title}
-                  width={600}
-                  height={400}
-                  className="rounded-md"
-                />
-                <p className=" text-sm text-muted-foreground">
+              <Image
+                src={blog.thumbnail}
+                alt=""
+                width={600}
+                height={400}
+                className="aspect-[16/9] w-full rounded-md border border-foreground/15 object-cover sm:w-40 sm:shrink-0"
+              />
+              <div className="flex flex-col gap-2">
+                <h2 className="font-medium tracking-tight underline-offset-4 group-hover:underline">
+                  {blog.title}
+                  <ArrowUpRight className="ml-1 inline h-3.5 w-3.5 text-muted-foreground" />
+                </h2>
+                <p className="font-light leading-relaxed text-muted-foreground">
                   {blog.description}
                 </p>
               </div>

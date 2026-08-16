@@ -1,54 +1,80 @@
-"use client";
+import { Github, Linkedin, Mail, Youtube, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-import { Github, Linkedin, Mail, Youtube } from "lucide-react";
+const socials = [
+  {
+    href: "https://github.com/aakritsubedi",
+    label: "github",
+    Icon: Github,
+  },
+  {
+    href: "https://linkedin.com/in/aakrit-subedi",
+    label: "linkedin",
+    Icon: Linkedin,
+  },
+  {
+    href: "https://www.youtube.com/aakritsubedi",
+    label: "youtube",
+    Icon: Youtube,
+  },
+];
+
+const linkStyle = cn(
+  "inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground",
+  "focus-visible:outline-none focus-visible:text-foreground"
+);
 
 export function Footer() {
   return (
-    <footer className="mx-auto max-w-5xl py-6 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex flex-col items-center justify-between gap-4 md:p-24 md:h-24 md:flex-row md:py-0">
-        <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-          <p className="text-sm leading-loose md:text-left">
-            Built by Aakrit Subedi. © {new Date().getFullYear()} All rights
-            reserved.
-          </p>
-        </div>
-        <div className="flex gap-4">
-          <a
-            href="mailto:aakritsubedi9@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl bg-muted p-2 hover:bg-muted/80"
-          >
-            <Mail className="h-5 w-5" />
-            <span className="sr-only">Email</span>
-          </a>
-          <a
-            href="https://github.com/aakritsubedi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl bg-muted p-2 hover:bg-muted/80"
-          >
-            <Github className="h-5 w-5" />
-            <span className="sr-only">GitHub</span>
-          </a>
-          <a
-            href="https://linkedin.com/in/aakrit-subedi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl bg-muted p-2 hover:bg-muted/80"
-          >
-            <Linkedin className="h-5 w-5" />
-            <span className="sr-only">LinkedIn</span>
-          </a>
-          <a
-            href="https://www.youtube.com/aakritsubedi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl bg-muted p-2 hover:bg-muted/80"
-          >
-            <Youtube className="h-5 w-5" />
-            <span className="sr-only">Youtube</span>
-          </a>
+    <footer className="border-t">
+      <div className="mx-auto max-w-3xl px-4 py-14 font-mono text-sm sm:px-6 sm:py-16">
+        <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+          {/* Identity */}
+          <div className="space-y-2">
+            <p className="text-foreground">aakrit subedi</p>
+            <p className="text-muted-foreground">
+              © {new Date().getFullYear()}
+            </p>
+          </div>
+
+          {/* Contact + social */}
+          <div className="flex flex-col gap-3 sm:items-end">
+            <a
+              href="mailto:aakritsubedi9@gmail.com"
+              className={cn(linkStyle, "group")}
+            >
+              <Mail className="h-4 w-4 shrink-0" aria-hidden />
+              <span className="underline decoration-foreground/25 underline-offset-4 transition-colors group-hover:decoration-foreground">
+                aakritsubedi9@gmail.com
+              </span>
+            </a>
+
+            <Link
+              href="/AakritSubedi.pdf"
+              target="_blank"
+              className={cn(linkStyle, "group")}
+            >
+              resume (PDF)
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none" />
+            </Link>
+
+            <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-2 sm:justify-end">
+              {socials.map(({ href, label, Icon }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkStyle}
+                  >
+                    <Icon className="h-4 w-4 shrink-0" aria-hidden />
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
