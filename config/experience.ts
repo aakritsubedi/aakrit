@@ -26,32 +26,32 @@ export type ExperienceRole = {
 export const workIntro: string[] = [
   "I started out at Leapfrog Technology right after my undergrad, spending a couple of years building ed-tech and health-tech web and mobile applications and learning how software actually gets shipped.",
   "I then joined Naamche as a software engineer, building products for reAlpha, and later moved into engineering management, leading teams across client and internal products while staying hands-on in the code. I stayed through the acquisition and the growth that came with it.",
-  "I’m now at Cantordust, building a product for the pharmaceutical industry that turns raw documents into something teams can actually search, question, and act on. It’s early, which means the work spans product, architecture, and code all at once.",
+  // "I’m now at Cantordust, building a product for the pharmaceutical industry that turns raw documents into something teams can actually search, question, and act on. It’s early, which means the work spans product, architecture, and code all at once.",
   "Alongside all of this, I keep building personal projects and take on the occasional freelance engagement. It’s how I try out new technologies and stay close to problems outside my day job.",
 ];
 
 export const workExperience: ExperienceRole[] = [
-  {
-    id: "lead-engineer",
-    title: "Lead Engineer",
-    period: "Mid 2026 - Present",
-    companies: [
-      {
-        name: "Cantordust",
-        logo: "/work/cantordust-mark.png",
-        logoAlt: "Cantordust logo",
-        logoClassName: "bg-black p-1",
-        logoImageClassName: "object-contain",
-        fallback: "CD",
-        domain: "pharma document intelligence",
-        bullets: [
-          "Building the ingestion and processing pipeline that parses raw pharmaceutical documents into structured, queryable data models",
-          "Owning architecture across the stack: services, data model, retrieval layer, and the infrastructure it runs on",
-          "Setting the engineering foundations of an early-stage product (repo structure, CI, deployments, review practices) while scoping work with the team and domain experts",
-        ],
-      },
-    ],
-  },
+  // {
+  //   id: "lead-engineer",
+  //   title: "Lead Engineer",
+  //   period: "Mid 2026 - Present",
+  //   companies: [
+  //     {
+  //       name: "Cantordust",
+  //       logo: "/work/cantordust-mark.png",
+  //       logoAlt: "Cantordust logo",
+  //       logoClassName: "bg-black p-1",
+  //       logoImageClassName: "object-contain",
+  //       fallback: "CD",
+  //       domain: "pharma document intelligence",
+  //       bullets: [
+  //         "Building the ingestion and processing pipeline that parses raw pharmaceutical documents into structured, queryable data models",
+  //         "Owning architecture across the stack: services, data model, retrieval layer, and the infrastructure it runs on",
+  //         "Setting the engineering foundations of an early-stage product (repo structure, CI, deployments, review practices) while scoping work with the team and domain experts",
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     id: "engineering-manager",
     title: "Engineering Manager",
