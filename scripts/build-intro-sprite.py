@@ -1,59 +1,38 @@
 #!/usr/bin/env python3
 """
-Normalise public/intro.png into a sprite sheet the SpriteAvatar can address.
+Normalise public/sprite/*.png into one sprite sheet the SpriteAvatar can address.
 
-The source is a 6x6 contact sheet of independently drawn frames on white:
-rows are separated by clear gutters, but frames within a row often touch, and
-every frame sits at a slightly different size and offset. This script lifts
-the white background to real alpha, finds each frame, and re-composes them on
-a uniform grid anchored at the desk line so the figure holds still as the
-animation plays.
+Each source is a 4x2 contact sheet of independently drawn desk frames, and every
+frame is enclosed in a thin drawn rectangle. Those rules must not survive into
+the animation, so this script finds each panel, crops *inside* its border, and
+re-composes the panels on a uniform grid.
+
+The panels are whole scenes rather than cut-out figures — keying the paper to
+alpha would eat the wall and window shading and leave a ragged silhouette — so
+frames stay opaque on their paper and SpriteAvatar blends that paper away.
 
     python3 scripts/build-intro-sprite.py
 """
 
 from PIL import Image
 import numpy as np
-from scipy import ndimage
+import glob
 import os
 
-SRC = "public/intro.png"
+SRC_GLOB = "public/sprite/*.png"
 OUT = "public/intro-sprite.webp"
 
-COLS = 6
-PAD = 6                # transparent margin around the composed cell
-MIN_COMPONENT = 400    # drop specks; real frames are far larger
-BG_LUM = 238           # anything lighter than this is candidate background
-
-
-def alpha_from_white(rgb: np.ndarray) -> np.ndarray:
-    """White background -> transparent, via a flood fill from the borders.
-
-    A flat "white is background" test would also punch holes in the striped
-    shirt, the laptop and the mug, so only white *connected to the edge* of
-    the sheet is removed.
-    """
-    lum = rgb.mean(axis=2)
-    sat = rgb.max(axis=2) - rgb.min(axis=2)
-    light = (lum > BG_LUM) & (sat < 24)
-
-    labels, _ = ndimage.label(light)
-    edge = set(labels[0, :]) | set(labels[-1, :])
-    edge |= set(labels[:, 0]) | set(labels[:, -1])
-    edge.discard(0)
-
-    alpha = np.where(np.isin(labels, list(edge)), 0, 255).astype(np.uint8)
-
-    # Remove leftover speckle so it can't distort the frame bounds.
-    comp, n = ndimage.label(alpha > 0)
-    if n:
-        areas = ndimage.sum(alpha > 0, comp, range(1, n + 1))
-        keep = [i + 1 for i, a in enumerate(areas) if a >= MIN_COMPONENT]
-        alpha = np.where(np.isin(comp, keep), alpha, 0)
-    return alpha
+COLS = 4               # panels per row within a single source sheet
+ROWS = 2               # panel rows within a single source sheet
+CELL_W = 300           # width each panel is normalised to in the sheet
+INK_LUM = 235          # darker than this counts as drawn ink
+BORDER_COVER = 0.80    # a row/col this full of ink is the panel's rule
+BORDER_SEARCH = 14     # how far in from the panel edge the rule can sit
+BORDER_BLEED = 3       # extra px trimmed to clear the rule's anti-aliasing
 
 
 def bands(mask: np.ndarray, min_len: int):
+    """Contiguous runs of True at least `min_len` long."""
     out, start = [], None
     for i, v in enumerate(mask):
         if v and start is None:
@@ -67,69 +46,81 @@ def bands(mask: np.ndarray, min_len: int):
     return out
 
 
-def split_to(segments, want: int, counts: np.ndarray):
-    """Force `want` frames out of detected segments.
+def inner_edge(cover: np.ndarray, from_start: bool) -> int:
+    """Where the panel content begins, just past the drawn rule.
 
-    Adjacent frames sometimes touch and merge into one wide segment. Splitting
-    at the midpoint would slice through a figure, so cut at the thinnest
-    column in the middle of the segment — the pinch point where two drawings
-    just barely meet.
+    `cover` is the per-row (or per-column) ink fraction across the panel. The
+    rule shows up as one or two near-solid lines at the very edge; content
+    lines never span the full panel that close to it.
     """
-    segs = list(segments)
-    while len(segs) < want:
-        i = max(range(len(segs)), key=lambda k: segs[k][1] - segs[k][0])
-        a, b = segs.pop(i)
-        lo, hi = a + (b - a) // 3, b - (b - a) // 3
-        cut = lo + int(np.argmin(counts[lo:hi + 1]))
-        segs[i:i] = [(a, cut), (cut + 1, b)]
-    return sorted(segs)[:want]
+    n = len(cover)
+    idx = range(min(BORDER_SEARCH, n)) if from_start else range(n - 1, max(n - 1 - BORDER_SEARCH, -1), -1)
+    hit = None
+    for i in idx:
+        if cover[i] >= BORDER_COVER:
+            hit = i
+    if hit is None:
+        return BORDER_BLEED if from_start else n - 1 - BORDER_BLEED
+    return hit + 1 + BORDER_BLEED if from_start else hit - 1 - BORDER_BLEED
+
+
+def panels(path: str):
+    """Crop the frames out of one contact sheet, borders excluded."""
+    rgb = np.array(Image.open(path).convert("RGB")).astype(int)
+    ink = rgb.mean(axis=2) < INK_LUM
+
+    row_bands = bands(ink.any(axis=1), min_len=40)
+    col_bands = bands(ink.any(axis=0), min_len=40)
+    if len(row_bands) != ROWS or len(col_bands) != COLS:
+        raise SystemExit(
+            f"{path}: expected a {COLS}x{ROWS} grid, found "
+            f"{len(col_bands)}x{len(row_bands)}"
+        )
+
+    out = []
+    for top, bottom in row_bands:
+        for left, right in col_bands:
+            cell = ink[top:bottom + 1, left:right + 1]
+            h, w = cell.shape
+            y0 = inner_edge(cell.sum(axis=1) / w, True)
+            y1 = inner_edge(cell.sum(axis=1) / w, False)
+            x0 = inner_edge(cell.sum(axis=0) / h, True)
+            x1 = inner_edge(cell.sum(axis=0) / h, False)
+            out.append(rgb[top + y0:top + y1 + 1, left + x0:left + x1 + 1])
+    return out
 
 
 def main():
-    rgb = np.array(Image.open(SRC).convert("RGB")).astype(int)
-    alpha = alpha_from_white(rgb)
-    rgba = np.dstack([rgb, alpha]).astype(np.uint8)
-    solid = alpha > 40
+    sources = sorted(glob.glob(SRC_GLOB))
+    if not sources:
+        raise SystemExit(f"no sources matched {SRC_GLOB}")
 
-    rows = bands(solid.any(axis=1), min_len=40)
-    print(f"{len(rows)} rows detected")
+    frames = []
+    for path in sources:
+        cropped = panels(path)
+        print(f"{path}: {len(cropped)} panels, "
+              f"sizes {[f'{c.shape[1]}x{c.shape[0]}' for c in cropped]}")
+        frames.extend(cropped)
 
-    frames = []  # [row][col] -> cropped RGBA
-    for r, (top, bottom) in enumerate(rows):
-        strip = solid[top:bottom + 1]
-        counts = strip.sum(axis=0)
-        segs = split_to(bands(strip.any(axis=0), min_len=30), COLS, counts)
+    rows = len(frames) // COLS
+    # The crops land within a couple of px of each other; snapping them all to
+    # one cell registers the scene so the desk and window don't jitter.
+    aspect = np.median([f.shape[1] / f.shape[0] for f in frames])
+    cell_w, cell_h = CELL_W, round(CELL_W / aspect)
+    print(f"\n{len(frames)} frames, cell {cell_w}x{cell_h} "
+          f"(aspect {cell_w / cell_h:.4f})")
 
-        row_frames = []
-        for (x0, x1) in segs:
-            cell = rgba[top:bottom + 1, x0:x1 + 1]
-            ys, xs = np.where(cell[..., 3] > 40)
-            row_frames.append(cell[ys.min():ys.max() + 1, xs.min():xs.max() + 1])
-        frames.append(row_frames)
-        print(f"  row {r}: {len(row_frames)} frames, "
-              f"sizes {[f'{f.shape[1]}x{f.shape[0]}' for f in row_frames]}")
+    sheet = Image.new("RGB", (COLS * cell_w, rows * cell_h), (255, 255, 255))
+    for i, frame in enumerate(frames):
+        img = Image.fromarray(frame.astype(np.uint8)).resize(
+            (cell_w, cell_h), Image.LANCZOS
+        )
+        sheet.paste(img, ((i % COLS) * cell_w, (i // COLS) * cell_h))
 
-    cell_w = max(f.shape[1] for row in frames for f in row) + PAD * 2
-    cell_h = max(f.shape[0] for row in frames for f in row) + PAD * 2
-    print(f"\ncell {cell_w}x{cell_h} (aspect {cell_w / cell_h:.4f})")
-
-    sheet = Image.new("RGBA", (COLS * cell_w, len(frames) * cell_h), (0, 0, 0, 0))
-    for r, row in enumerate(frames):
-        for c, frame in enumerate(row):
-            img = Image.fromarray(frame)
-            # Bottom-centred: anchors every frame on the desk line, so the
-            # figure doesn't bob as arms and props change the bounding box.
-            sheet.paste(
-                img,
-                (c * cell_w + (cell_w - img.width) // 2,
-                 r * cell_h + cell_h - PAD - img.height),
-            )
-
-    sheet.save(OUT, quality=90, method=6)
+    sheet.save(OUT, quality=80, method=6)
     print(f"wrote {OUT}  {sheet.size[0]}x{sheet.size[1]}  "
           f"{os.path.getsize(OUT) / 1024:.0f} KB")
-    print(f"\ncols={COLS} rows={len(frames)} "
-          f"frameAspect={cell_w / cell_h:.4f}")
+    print(f"\ncols={COLS} rows={rows} frameAspect={cell_w / cell_h:.4f}")
 
 
 if __name__ == "__main__":

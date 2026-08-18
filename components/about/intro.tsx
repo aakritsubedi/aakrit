@@ -31,7 +31,7 @@ function Intro() {
   return (
     <div className="mx-auto max-w-3xl py-12 sm:py-18">
       <SpriteAvatar
-        className="-ml-3 w-44 sm:w-56"
+        className="w-44 sm:w-56"
         label="Aakrit waving, typing, thinking, drinking coffee, and gesturing at his desk"
       />
 
