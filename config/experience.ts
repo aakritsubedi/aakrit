@@ -25,7 +25,7 @@ export type ExperienceRole = {
 
 export const workIntro: string[] = [
   "I started out at Leapfrog Technology right after my undergrad, spending a couple of years building ed-tech and health-tech web and mobile applications and learning how software actually gets shipped.",
-  "I then joined Naamche as a software engineer, building products for reAlpha, and later moved into engineering management, leading teams across client and internal products while staying hands-on in the code. I stayed through the acquisition and the growth that came with it.",
+  "I then joined Naamche as a software engineer, building products for reAlpha, and later moved into engineering management, leading teams and building with them across client and internal products. I stayed through the acquisition and the growth that came with it.",
   // "I’m now at Cantordust, building a product for the pharmaceutical industry that turns raw documents into something teams can actually search, question, and act on. It’s early, which means the work spans product, architecture, and code all at once.",
   "Alongside all of this, I keep building personal projects and take on the occasional freelance engagement. It’s how I try out new technologies and stay close to problems outside my day job.",
 ];

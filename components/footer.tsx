@@ -13,11 +13,11 @@ const socials = [
     label: "linkedin",
     Icon: Linkedin,
   },
-  {
-    href: "https://www.youtube.com/aakritsubedi",
-    label: "youtube",
-    Icon: Youtube,
-  },
+  // {
+  //   href: "https://www.youtube.com/aakritsubedi",
+  //   label: "youtube",
+  //   Icon: Youtube,
+  // },
 ];
 
 const linkStyle = cn(

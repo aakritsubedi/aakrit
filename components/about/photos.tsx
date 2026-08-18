@@ -111,8 +111,8 @@ function PhotoGallery() {
     <div className="mx-auto max-w-3xl" id="photos">
       {/* Sheet header */}
       <div className="mb-4 flex items-baseline justify-between border-b border-foreground/15 pb-2 font-mono text-[11px] text-muted-foreground">
-        <span className="text-foreground">contact sheet</span>
-        <span>{photos.length + 1} frames · talks &amp; mentorship</span>
+        <span className="text-foreground"></span>
+        <span>talks &amp; mentorship</span>
       </div>
 
       <div className="grid grid-cols-2 gap-x-3 gap-y-5 sm:grid-cols-3 sm:gap-x-4">
@@ -127,7 +127,8 @@ function PhotoGallery() {
             <Image
               src={photo.src}
               alt={photo.alt}
-              fill
+              width="245"
+              height="50"
               priority={photo.priority}
               sizes="(min-width: 768px) 245px, (min-width: 640px) 33vw, 50vw"
               className={STOCK}
@@ -153,14 +154,6 @@ function PhotoGallery() {
             Your browser does not support the video tag.
           </video>
         </Frame>
-      </div>
-
-      {/* Dashed rule reads more like a perforated film edge than a solid line */}
-      <div className="mt-8 border-t border-dashed border-foreground/20 pt-3">
-        <p className="font-mono text-[11px] leading-relaxed text-muted-foreground">
-          mentorship sessions and talks — leading, helping peers, and sharing
-          knowledge.
-        </p>
       </div>
     </div>
   );
