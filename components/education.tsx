@@ -65,9 +65,9 @@ export function Education() {
                 </CardHeader>
                 {edu.details.length > 0 && (
                   <CardContent>
-                    <ul className="list-disc pl-5 space-y-2">
+                    <ul className="list-disc pl-5 space-y-2 mt-[0.6]">
                       {edu.details.map((detail, i) => (
-                        <li key={i}>{detail}</li>
+                        <li key={i} className="text-sm">{detail}</li>
                       ))}
                     </ul>
                   </CardContent>

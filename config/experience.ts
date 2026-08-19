@@ -1,7 +1,16 @@
+export type ProgressionStep = {
+  /** Title held at this point, e.g. "Associate Software Engineer" */
+  title: string;
+  /** When the step started, e.g. "2019". Optional — the chain reads fine without it */
+  year?: string;
+};
+
 export type ExperienceCompany = {
   name: string;
   /** Small muted note after the company name, e.g. "(acquired by reAlpha)" */
   note?: string;
+  /** Titles held here, oldest first — rendered as a quiet arrow chain */
+  progression?: ProgressionStep[];
   logo: string;
   logoAlt: string;
   /** Extra classes on the avatar container, for logos needing their own backdrop */
@@ -24,8 +33,8 @@ export type ExperienceRole = {
 };
 
 export const workIntro: string[] = [
-  "I started out at Leapfrog Technology right after my undergrad, spending a couple of years building ed-tech and health-tech web and mobile applications and learning how software actually gets shipped.",
-  "I then joined Naamche as a software engineer, building products for reAlpha, and later moved into engineering management, leading teams and building with them across client and internal products. I stayed through the acquisition and the growth that came with it.",
+  "I started out at Leapfrog Technology right after my undergrad as an associate software engineer through their internship programWithin a year, I moved into a Software Engineer role and spent the next couple of years building web and mobile applications across ed-tech and health-tech web and mobile applications and learning how software actually gets shipped.",
+  "I then joined Naamche as a software engineer, building products for reAlpha. I grew into a tech lead, helping establish engineering standards and best practices, and later moved into engineering management, leading teams while continuing to build alongside them across client and internal products. I stayed through the acquisition and the growth that followed.",
   // "I’m now at Cantordust, building a product for the pharmaceutical industry that turns raw documents into something teams can actually search, question, and act on. It’s early, which means the work spans product, architecture, and code all at once.",
   "Alongside all of this, I keep building personal projects and take on the occasional freelance engagement. It’s how I try out new technologies and stay close to problems outside my day job.",
 ];
@@ -58,8 +67,30 @@ export const workExperience: ExperienceRole[] = [
     period: "2021 - 2026",
     companies: [
       {
+        name: "reAlpha",
+        note: "(NASDAQ: $AIRE)",
+        progression: [
+          { title: "Engineering Manager", year: "2024" },
+        ],
+        logo: "/work/realpha.jpeg",
+        logoAlt: "Naamche Inc. logo",
+        fallback: "re",
+        domain: "helped setting up standards across verticles",
+        bullets: [
+          "Ensured engineering quality and standards across multiple projects under reAlpha, driving consistency in architecture, development practices, and delivery.",
+          "Led technical resource planning, aligning engineering capacity with project workload, priorities, and delivery needs",
+          "Worked closely with stakeholders and management, bridging business priorities with engineering execution and keeping teams aligned",
+          "Helped establish processes and standards across QA and design teams, improving collaboration and consistency across the product development lifecycle"
+        ],
+      },
+      {
         name: "Naamche Inc.",
         note: "(acquired by reAlpha)",
+        progression: [
+          { title: "Software Engineer", year: "2021" },
+          { title: "Tech Lead", year: "2021" },
+          { title: "Engineering Manager", year: "2024" },
+        ],
         logo: "/work/naamche.png",
         logoAlt: "Naamche Inc. logo",
         fallback: "N",
@@ -97,6 +128,10 @@ export const workExperience: ExperienceRole[] = [
     companies: [
       {
         name: "Leapfrog Technology",
+        progression: [
+          { title: "Associate Software Engineer", year: "2019" },
+          { title: "Software Engineer", year: "2020" },
+        ],
         logo: "/work/lf-logo.png",
         logoAlt: "Leapfrog Technology logo",
         fallback: "LF",
@@ -120,11 +155,23 @@ export const workExperience: ExperienceRole[] = [
         logo: "/work/wealthtech.png",
         logoAlt: "WealthTech logo",
         fallback: "WT",
-        domain: "financial services",
+        domain: "Software company based on Australia",
         bullets: [
-          "Delivered web and mobile products for financial services clients, from data modelling and API design through to release",
+          "Delivered web and mobile products for services clients, from data modelling and API design through to release",
           "Worked directly with the founder on market and technical research, building proof-of-concepts that helped win new clients",
           "Designed and built an internal employee management system covering records and day-to-day operational workflows",
+        ],
+      },
+      {
+        name: "Upwork",
+        logo: "/work/upwork.png",
+        logoAlt: "Upwork logo",
+        fallback: "Up",
+        domain: "multiple freelance projects",
+        bullets: [
+        "Delivered multiple full-stack applications across web and mobile platforms",
+        "Set up and improved deployment pipelines for both frontend and backend applications",
+        "Integrated third-party services and external providers, including building data pipelines to send and retrieve data reliably",
         ],
       },
     ],

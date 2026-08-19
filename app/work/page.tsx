@@ -58,17 +58,10 @@ function WorkPage() {
           ))}
         </div>
 
-        <Button
-          asChild
-          size="sm"
-          variant="outline"
-          className="mt-8 rounded-full font-mono text-xs"
-        >
-          <Link href="/AakritSubedi.pdf" target="_blank" download>
-            resume (PDF)
-            <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
-          </Link>
-        </Button>
+        <Link href="/AakritSubedi.pdf" target="_blank" className="mt-6 rounded-full font-mono text-xs flex gap-1 items-center" download>
+          resume (PDF)
+          <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
+        </Link>
 
         {/* Timeline */}
         <section
@@ -141,12 +134,47 @@ function WorkPage() {
                         </div>
                       </div>
 
-                      <ul className="mt-3 space-y-2 font-light leading-relaxed text-muted-foreground">
+                      {/* Role progression — quiet arrow chain, latest title carries the weight */}
+                      {company.progression ? (
+                        <ol
+                          aria-label={`Roles held at ${company.name}`}
+                          className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-muted-foreground/60 sm:ml-10"
+                        >
+                          {company.progression.map((step, index) => (
+                            <li
+                              key={step.title}
+                              className="flex items-center gap-2"
+                            >
+                              {index > 0 ? (
+                                <span aria-hidden className="text-foreground/25">
+                                  →
+                                </span>
+                              ) : null}
+                              <span
+                                className={cn(
+                                  index === company.progression!.length - 1 &&
+                                    "text-foreground/70"
+                                )}
+                              >
+                                {step.title}
+                                {step.year ? (
+                                  <span className="text-muted-foreground/45">
+                                    {" "}
+                                    · {step.year}
+                                  </span>
+                                ) : null}
+                              </span>
+                            </li>
+                          ))}
+                        </ol>
+                      ) : null}
+
+                      <ul className="mt-3 space-y-2 font-light leading-relaxed text-sm text-muted-foreground">
                         {company.bullets.map((bullet, index) => (
                           <li key={index} className="flex gap-3">
                             <span
                               aria-hidden
-                              className="mt-[0.6em] h-px w-3 shrink-0 bg-foreground/25"
+                              className="mt-[0.75em] h-px w-3 shrink-0 bg-foreground/25"
                             />
                             <span>{bullet}</span>
                           </li>

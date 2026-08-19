@@ -148,10 +148,10 @@ function EducationPage() {
 
                 <ul className="mt-4 space-y-2 font-light leading-relaxed text-muted-foreground">
                   {education.details.map((detail, i) => (
-                    <li key={i} className="flex gap-3">
+                    <li key={i} className="flex gap-3 text-sm">
                       <span
                         aria-hidden
-                        className="mt-[0.6em] h-px w-3 shrink-0 bg-foreground/25"
+                        className="mt-[0.75em] h-px w-3 shrink-0 bg-foreground/25"
                       />
                       <span>{detail}</span>
                     </li>
@@ -170,7 +170,7 @@ function EducationPage() {
                       // defaultValue="item-0"
                     >
                       {education.academicProjects.map((project, i) => (
-                        <AccordionItem value={`item-${i}`} key={i}>
+                        <AccordionItem value={`item-${i}`} key={i} className="text-sm">
                           <AccordionTrigger className="py-3 hover:no-underline">
                             <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-left">
                               <span className="font-medium">
@@ -190,7 +190,7 @@ function EducationPage() {
                                 <li key={j} className="flex gap-3">
                                   <span
                                     aria-hidden
-                                    className="mt-[0.6em] h-px w-3 shrink-0 bg-foreground/25"
+                                    className="mt-[0.75em] h-px w-3 shrink-0 bg-foreground/25"
                                   />
                                   <span>{detail}</span>
                                 </li>
