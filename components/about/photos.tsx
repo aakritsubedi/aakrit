@@ -10,6 +10,8 @@ const photos = [
     caption: "mentorship session at KEC",
     span: "col-span-2 sm:col-span-1",
     aspect: "aspect-[16/10] sm:aspect-[4/3]",
+    // Full-bleed on mobile, one of three columns from sm up.
+    sizes: "(min-width: 640px) 33vw, 100vw",
     priority: true,
   },
   {
@@ -127,10 +129,9 @@ function PhotoGallery() {
             <Image
               src={photo.src}
               alt={photo.alt}
-              width="245"
-              height="50"
+              fill
               priority={photo.priority}
-              sizes="(min-width: 768px) 245px, (min-width: 640px) 33vw, 50vw"
+              sizes={photo.sizes ?? "(min-width: 640px) 33vw, 50vw"}
               className={STOCK}
             />
           </Frame>
