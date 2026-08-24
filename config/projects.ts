@@ -33,6 +33,16 @@ export const projects: Project[] = [
     logo: "/projects/murmur.webp"
   },
   {
+    title: "Obol: AI credit tracker",
+    slug: "obol",
+    description: "Track real-time AI credit usage based on local inference, not monthly invoices. Live spend tracking for Claude Code, Codex CLI, and OpenCode. Local-only. No telemetry. No accounts.",
+    status: "Released on Github",
+    thumbnail: "/projects/obol-thumbnail.png",
+    techStacks: ["Swift", "Vite", "TailwindCSS"],
+    link: "https://github.com/aakritsubedi/Obol",
+    logo: "/projects/obol.png"
+  },
+  {
     title: "MeroShare Plus",
     slug: "meroshare-plus",
     description:

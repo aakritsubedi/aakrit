@@ -1,7 +1,10 @@
+import { alternatesFor } from "@/lib/seo/metadata";
+
 export const metadata = {
   title: "Projects | Aakrit Subedi",
   description:
     "Portfolio of software projects and products built by Aakrit Subedi.",
+  alternates: alternatesFor("/projects"),
   robots: "index, follow",
   openGraph: {
     title: "Projects | Aakrit Subedi",

@@ -4,8 +4,11 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import type React from "react"; // Import React
-import Script from "next/script";
 import { metadataConfig } from "@/config/metadata";
+import {
+  buildStructuredData,
+  serializeStructuredData,
+} from "@/lib/seo/structured-data";
 import { Analytics } from '@vercel/analytics/next';
 
 import "./globals.css";
@@ -26,23 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script
-          id="structured-data"
+        {/*
+          Rendered server-side rather than through next/script so the graph is
+          in the initial HTML — an agent that never executes JavaScript still
+          sees it.
+        */}
+        <script
           type="application/ld+json"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Aakrit Subedi",
-              url: "https://aakritsubedi.com.np",
-              sameAs: [
-                "https://github.com/aakritsubedi",
-                "https://twitter.com/SubediAakrit",
-              ],
-              jobTitle: "Software Engineer",
-              image: "https://aakritsubedi.com.np/og-image.png",
-            }),
+            __html: serializeStructuredData(buildStructuredData()),
           }}
         />
       </head>

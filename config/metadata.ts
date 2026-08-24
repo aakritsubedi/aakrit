@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 
+import { siteUrl } from "@/config/site";
+import { alternatesFor } from "@/lib/seo/metadata";
+
 export const metadataConfig: Metadata = {
+  metadataBase: new URL(siteUrl),
+  alternates: alternatesFor("/"),
   title: "Aakrit Subedi - Software Engineer",
   description:
     "Aakrit Subedi's personal portfolio showcasing projects, blogs, and more. Expertise in full-stack development, team leadership, and indie projects.",

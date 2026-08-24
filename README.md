@@ -1,6 +1,6 @@
 ## Aakrit Subedi
 
-This repository contains the source code for my personal portfolio, built with Next.js, TypeScript, and Tailwind CSS. The portfolio showcases my projects, blogs, and more.
+This repository contains the source code for my personal portfolio, built with Next.js, TypeScript, and Tailwind CSS. The portfolio showcases my projects, and more.
 
 ### Features
 

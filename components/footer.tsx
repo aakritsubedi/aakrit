@@ -20,6 +20,12 @@ const socials = [
   // },
 ];
 
+const siteLinks = [
+  { href: "/about", label: "about" },
+  { href: "/contact", label: "contact" },
+  { href: "/privacy", label: "privacy" },
+];
+
 const linkStyle = cn(
   "inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground",
   "focus-visible:outline-none focus-visible:text-foreground"
@@ -36,6 +42,20 @@ export function Footer() {
             <p className="text-muted-foreground">
               © {new Date().getFullYear()}
             </p>
+            <ul className="flex flex-wrap items-center gap-x-3 gap-y-1 pt-1">
+              {siteLinks.map((link, i) => (
+                <li key={link.href} className="flex items-center">
+                  {i > 0 && (
+                    <span aria-hidden className="pr-3 text-muted-foreground/40">
+                      ·
+                    </span>
+                  )}
+                  <Link href={link.href} className={linkStyle}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact + social */}

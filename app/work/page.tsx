@@ -1,7 +1,10 @@
+import { alternatesFor } from "@/lib/seo/metadata";
+
 export const metadata = {
   title: "Work Experience | Aakrit Subedi",
   description:
     "Professional experience, roles, and achievements of Aakrit Subedi as a software engineer and manager.",
+  alternates: alternatesFor("/work"),
   robots: "index, follow",
   openGraph: {
     title: "Work Experience | Aakrit Subedi",
