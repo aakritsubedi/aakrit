@@ -12,6 +12,7 @@ import {
 import { Analytics } from '@vercel/analytics/next';
 
 import "./globals.css";
+import Script from "next/dist/client/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const jetbrainsMono = JetBrains_Mono({
@@ -39,6 +40,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: serializeStructuredData(buildStructuredData()),
           }}
+        />
+        <Script
+          data-website-id="dfid_XAVv3JFrXQfGX5iHBiZrA"
+          data-domain="www.aakritsubedi.com.np"
+          src="https://datafa.st/js/script.js"
+          strategy="afterInteractive"
         />
       </head>
       <body

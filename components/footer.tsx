@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail, Youtube, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { VisitorStats } from "@/components/visitor-stats";
 
 const socials = [
   {
@@ -56,6 +57,9 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+            <div className="pt-2">
+              <VisitorStats />
+            </div>
           </div>
 
           {/* Contact + social */}
