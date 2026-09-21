@@ -1,3 +1,4 @@
+import { absoluteUrl } from "@/config/site";
 import { alternatesFor } from "@/lib/seo/metadata";
 
 export const metadata = {
@@ -10,10 +11,10 @@ export const metadata = {
     title: "Projects | Aakrit Subedi",
     description:
       "Portfolio of software projects and products built by Aakrit Subedi.",
-    url: "https://aakritsubedi.com.np/projects",
+    url: absoluteUrl("/projects"),
     images: [
       {
-        url: "https://aakritsubedi.com.np/og-image.png",
+        url: absoluteUrl("/og-image.png"),
         width: 1200,
         height: 630,
         alt: "Aakrit Subedi - Software Engineer Portfolio",
@@ -27,7 +28,7 @@ export const metadata = {
     description:
       "Portfolio of software projects and products built by Aakrit Subedi.",
     creator: "@SubediAakrit",
-    images: ["https://aakritsubedi.com.np/og-image.png"],
+    images: [absoluteUrl("/og-image.png")],
   },
 };
 import { blogs, projects, type Project } from "@/config/projects";

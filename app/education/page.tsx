@@ -1,3 +1,4 @@
+import { absoluteUrl } from "@/config/site";
 import { alternatesFor } from "@/lib/seo/metadata";
 
 export const metadata = {
@@ -8,10 +9,10 @@ export const metadata = {
   openGraph: {
     title: "Education | Aakrit Subedi",
     description: "Academic background, degrees, and projects of Aakrit Subedi.",
-    url: "https://aakritsubedi.com.np/education",
+    url: absoluteUrl("/education"),
     images: [
       {
-        url: "https://aakritsubedi.com.np/og-image.png",
+        url: absoluteUrl("/og-image.png"),
         width: 1200,
         height: 630,
         alt: "Aakrit Subedi - Software Engineer Portfolio",
@@ -24,7 +25,7 @@ export const metadata = {
     title: "Education | Aakrit Subedi",
     description: "Academic background, degrees, and projects of Aakrit Subedi.",
     creator: "@SubediAakrit",
-    images: ["https://aakritsubedi.com.np/og-image.png"],
+    images: [absoluteUrl("/og-image.png")],
   },
 };
 import {

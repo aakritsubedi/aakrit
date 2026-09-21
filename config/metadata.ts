@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { siteUrl } from "@/config/site";
+import { absoluteUrl, person, siteUrl } from "@/config/site";
 import { alternatesFor } from "@/lib/seo/metadata";
 
 export const metadataConfig: Metadata = {
@@ -34,11 +34,11 @@ export const metadataConfig: Metadata = {
     title: "Aakrit Subedi - Software Engineer",
     description:
       "Aakrit Subedi's personal portfolio showcasing projects, blogs, and more. Expertise in full-stack development, team leadership, and indie projects.",
-    url: "https://aakritsubedi.com.np",
+    url: absoluteUrl("/"),
     siteName: "Aakrit Subedi Portfolio",
     images: [
       {
-        url: "https://aakritsubedi.com.np/og-image.png",
+        url: person.image,
         width: 1200,
         height: 630,
         alt: "Aakrit Subedi - Software Engineer Portfolio",
@@ -53,7 +53,7 @@ export const metadataConfig: Metadata = {
     description:
       "Aakrit Subedi's personal portfolio showcasing projects, blogs, and more. Expertise in full-stack development, team leadership, and indie projects.",
     creator: "@SubediAakrit",
-    images: ["https://aakritsubedi.com.np/og-image.png"],
+    images: [person.image],
   },
   robots: {
     index: true,

@@ -10,6 +10,7 @@
  */
 
 const base = (process.argv[2] ?? "http://localhost:3111").replace(/\/$/, "");
+const canonicalOrigin = "https://www.aakritsubedi.com.np";
 
 const PAGES = [
   "/",
@@ -234,8 +235,8 @@ await section("6. Metadata completeness", async () => {
     );
     // A page with no `alternates` of its own silently inherits the layout's,
     // so assert the exact URL rather than mere presence.
-    const expectedCanonical = `https://aakritsubedi.com.np${path}`;
-    const expectedMarkdown = `https://aakritsubedi.com.np${
+    const expectedCanonical = `${canonicalOrigin}${path}`;
+    const expectedMarkdown = `${canonicalOrigin}${
       path === "/" ? "/index.md" : `${path}.md`
     }`;
 

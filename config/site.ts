@@ -7,11 +7,11 @@
 /**
  * Origin used for every absolute URL the site publishes.
  *
- * NOTE: the apex currently 308-redirects to `www` at the DNS/hosting layer.
- * If that redirect is ever flipped (or `www` is made primary), change this one
+ * NOTE: the apex 308-redirects to `www` at the DNS/hosting layer, so `www` is
+ * the canonical origin. If that redirect is ever flipped, change this one
  * value and canonical URLs, og:url, the sitemap and llms.txt all follow.
  */
-export const siteUrl = "https://aakritsubedi.com.np";
+export const siteUrl = "https://www.aakritsubedi.com.np";
 
 export function absoluteUrl(path: string): string {
   if (path === "/") return `${siteUrl}/`;

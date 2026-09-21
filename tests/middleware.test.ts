@@ -8,7 +8,7 @@ const BROWSER_ACCEPT =
   "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8";
 
 function request(path: string, headers: Record<string, string> = {}) {
-  return new NextRequest(new URL(path, "https://aakritsubedi.com.np"), { headers });
+  return new NextRequest(new URL(path, "https://www.aakritsubedi.com.np"), { headers });
 }
 
 /** `NextResponse.next()` marks itself with this internal header. */
@@ -40,7 +40,7 @@ describe("markdown negotiation on known routes", () => {
     const response = middleware(request("/work", { accept: "text/markdown" }));
 
     expect(response.headers.get("link")).toBe(
-      '<https://aakritsubedi.com.np/work>; rel="canonical"; type="text/html"'
+      '<https://www.aakritsubedi.com.np/work>; rel="canonical"; type="text/html"'
     );
   });
 
