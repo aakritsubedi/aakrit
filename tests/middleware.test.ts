@@ -141,4 +141,8 @@ describe("passthrough paths", () => {
   it("leaves Next internals alone", () => {
     expect(isPassthrough(middleware(request("/_next/data/build/index.json")))).toBe(true);
   });
+
+  it("leaves API routes alone", () => {
+    expect(isPassthrough(middleware(request("/api/analytics")))).toBe(true);
+  });
 });

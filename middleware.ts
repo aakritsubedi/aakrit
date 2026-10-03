@@ -31,9 +31,7 @@ import {
  * `Vary` on the *HTML* variant is best-effort. Next's `setVaryHeader` calls
  * `res.setHeader("vary", ...)` unconditionally when rendering an app route
  * (next/dist/server/base-server.js), so under `next start` it overwrites both
- * this value and the one in `next.config.mjs`. On Vercel the middleware runs as
- * a separate function whose headers are merged after the render, so it does
- * survive there. Every response that actually carries markdown sets `Vary`
+ * this value and the one in `next.config.mjs`. Every response that actually carries markdown sets `Vary`
  * itself and is unaffected either way.
  */
 
@@ -49,7 +47,7 @@ function htmlPassthrough(): NextResponse {
 }
 
 /** Paths that are served verbatim and must never be negotiated or 404'd here. */
-const PASSTHROUGH_PREFIXES = ["/_next/", "/_vercel/"];
+const PASSTHROUGH_PREFIXES = ["/_next/", "/_vercel/", "/api/"];
 const PASSTHROUGH_PATHS = new Set([
   "/robots.txt",
   "/sitemap.xml",

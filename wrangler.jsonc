@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "aakrit",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      // Lets the worker call itself, used by Next for internal revalidation.
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "aakrit"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "routes": [
+    { "pattern": "www.aakritsubedi.com.np", "custom_domain": true },
+    // The apex is redirected to www by a Cloudflare Redirect Rule.
+    { "pattern": "aakritsubedi.com.np", "custom_domain": true }
+  ]
+}

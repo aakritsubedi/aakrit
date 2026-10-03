@@ -67,3 +67,7 @@ function mergeConfig(nextConfig, userConfig) {
 }
 
 export default nextConfig
+
+// Exposes Cloudflare bindings (and .dev.vars) to `next dev`.
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
+initOpenNextCloudflareForDev()

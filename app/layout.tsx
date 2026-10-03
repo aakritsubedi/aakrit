@@ -9,10 +9,9 @@ import {
   buildStructuredData,
   serializeStructuredData,
 } from "@/lib/seo/structured-data";
-import { Analytics } from '@vercel/analytics/next';
 
 import "./globals.css";
-import Script from "next/dist/client/script";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const jetbrainsMono = JetBrains_Mono({
@@ -61,7 +60,6 @@ export default function RootLayout({
           <Navigation />
           <main className="flex-1">{children}</main>
           <Footer />
-          <Analytics />
         </ThemeProvider>
       </body>
     </html>
