@@ -18,6 +18,7 @@ const PAGES = [
   "/work",
   "/projects",
   "/education",
+  "/cv",
   "/contact",
   "/privacy",
 ];

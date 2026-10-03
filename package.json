@@ -8,6 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
+    "cv:pdf": "uv run --cache-dir .cache/uv --with reportlab==5.0.1 scripts/make.py --all",
+    "cv:spec": "python3 scripts/make.py --spec-only",
+    "cv:spec:check": "python3 scripts/make.py --spec-only --check",
+    "cv:render": "uv run --cache-dir .cache/uv --with reportlab==5.0.1 scripts/make.py --render-only",
     "test:watch": "vitest",
     "verify:agents": "node scripts/verify-agent-readiness.mjs"
   },

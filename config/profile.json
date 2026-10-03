@@ -1,0 +1,32 @@
+{
+  "siteUrl": "https://www.aakritsubedi.com.np",
+  "name": "Aakrit Subedi",
+  "jobTitle": "Software Engineer",
+  "description": "Software engineer and engineering manager based in Kathmandu, Nepal. Builds and leads full-stack product teams, works hands-on across backend, frontend and infrastructure, and ships LLM-backed products.",
+  "email": "aakritsubedi9@gmail.com",
+  "imagePath": "/og-image.png",
+  "resumePath": "/AakritSubedi.pdf",
+  "address": {
+    "locality": "Kathmandu",
+    "region": "Bagmati Province",
+    "country": "NP"
+  },
+  "sameAs": [
+    "https://github.com/aakritsubedi",
+    "https://www.linkedin.com/in/aakrit-subedi",
+    "https://twitter.com/SubediAakrit",
+    "https://medium.com/@subediaakrit"
+  ],
+  "knowsAbout": [
+    "Full-stack web development",
+    "Engineering management",
+    "TypeScript",
+    "Node.js",
+    "React",
+    "Next.js",
+    "PostgreSQL",
+    "GraphQL",
+    "AWS",
+    "LLM application development"
+  ]
+}

@@ -54,7 +54,16 @@ describe("JSON-LD graph", () => {
     expect(contact["@type"]).toBe("ContactPoint");
     expect(contact.contactType).toBeTruthy();
     expect(contact.email).toBe(person.email);
-    expect(contact.telephone).toBe(person.telephone);
+  });
+
+  /**
+   * The phone number is deliberately unpublished. A placeholder like
+   * "+977-98XXXXXXX" in structured data is worse than no number at all, so
+   * assert the field is absent rather than merely well-formed.
+   */
+  it("publishes no telephone anywhere in the graph", () => {
+    expect(person.telephone).toBeUndefined();
+    expect(JSON.stringify(graph)).not.toContain("telephone");
   });
 
   it("cross-references its nodes by @id rather than duplicating them", () => {

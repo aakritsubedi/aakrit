@@ -1,4 +1,12 @@
 import { blogs, projects } from "@/config/projects";
+import {
+  cvAwards,
+  cvEducation,
+  cvProjects,
+  cvRoles,
+  cvSkills,
+  cvSummary,
+} from "@/config/cv";
 import { educationInformation } from "@/config/education";
 import { workExperience, workIntro } from "@/config/experience";
 import { aboutPage, contactPage, privacyPage, type LongFormPage } from "@/config/pages";
@@ -167,8 +175,57 @@ function renderBlogs(): string {
   ]);
 }
 
+function renderCv(): string {
+  const roles = cvRoles.map((role) =>
+    joinBlocks([
+      `### ${role.company}${role.note ? ` (${role.note})` : ""} — ${role.title}`,
+      bulletList(
+        [
+          role.period ? `Period: ${role.period}` : null,
+          role.location ? `Location: ${role.location}` : null,
+          role.context ? `Context: ${role.context}` : null,
+        ].filter((line): line is string => Boolean(line))
+      ),
+      bulletList(role.bullets),
+    ])
+  );
+
+  const projectLines = cvProjects.map((project) => {
+    const link = project.link ? ` (https://${project.link})` : "";
+    const stack = project.stack ? ` Stack: ${project.stack}.` : "";
+    return `- **${project.name}**${link} — ${project.description}${stack}`;
+  });
+
+  const educationBlocks = cvEducation.map((entry) =>
+    joinBlocks([
+      `### ${entry.qualification}`,
+      bulletList([
+        `Institution: ${entry.institution}`,
+        `Years: ${entry.period}`,
+        ...entry.details,
+      ]),
+    ])
+  );
+
+  return joinBlocks([
+    cvSummary,
+    `A PDF of this résumé is available at ${person.resume}.`,
+    "## Experience",
+    ...roles,
+    "## Selected projects",
+    projectLines.join("\n"),
+    "## Technical skills",
+    cvSkills.map((group) => `- **${group.label}**: ${group.items.join(", ")}`).join("\n"),
+    "## Education",
+    ...educationBlocks,
+    "## Awards and community",
+    bulletList(cvAwards),
+  ]);
+}
+
 const bodyBuilders: Record<string, () => string> = {
   "/": renderHome,
+  "/cv": renderCv,
   "/about": () => renderLongFormPage(aboutPage),
   "/work": renderWork,
   "/projects": renderProjects,

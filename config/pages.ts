@@ -75,6 +75,7 @@ export const aboutPage: LongFormPage = {
         { label: "Work experience", href: "/work", note: "roles, companies and dates" },
         { label: "Projects", href: "/projects", note: "what I've shipped, with live links" },
         { label: "Education", href: "/education", note: "degrees and academic projects" },
+        { label: "CV", href: "/cv", note: "the whole history as one document" },
         { label: "Résumé (PDF)", href: "/AakritSubedi.pdf" },
         { label: "Contact", href: "/contact", note: "how to reach me" },
       ],

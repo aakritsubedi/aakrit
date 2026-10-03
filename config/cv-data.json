@@ -1,0 +1,157 @@
+{
+  "headline": "Engineering Manager | Technical Lead | Full-Stack & AI Product Engineer",
+  "summary": "Engineering manager and hands-on full-stack engineer with 6+ years building and leading web, mobile, and AI products. Progressed from Associate Software Engineer to Software Engineer, Tech Lead, and Engineering Manager across Leapfrog Technology and Naamche/reAlpha, and now Lead Engineer at Cantordust building pharmaceutical document intelligence. Led architecture, technical planning, delivery, and team development while shipping TypeScript and Node.js services, React applications, GraphQL APIs, PostgreSQL data models, AWS infrastructure, and LLM-powered features.",
+  "roles": [
+    {
+      "company": "Cantordust",
+      "title": "Lead Engineer",
+      "period": "2026 - Present",
+      "location": "Kathmandu / Remote",
+      "context": "Early-stage pharmaceutical document intelligence product",
+      "bullets": [
+        "Document pipeline: Building the ingestion and processing pipeline that parses raw pharmaceutical documents into structured, queryable data models.",
+        "Architecture: Owning architecture across services, data model, retrieval layer, and the infrastructure it runs on.",
+        "Engineering foundations: Setting up repository structure, CI, deployments, and review practices for an early-stage product while scoping work with the team and domain experts."
+      ]
+    },
+    {
+      "company": "reAlpha / Naamche Inc.",
+      "note": "Naamche acquired by reAlpha, NASDAQ: AIRE",
+      "title": "Engineering Manager | Tech Lead | Software Engineer",
+      "period": "2021 - 2026",
+      "location": "Kathmandu / Remote",
+      "context": "Joined Naamche as one of seven engineers and grew with the company beyond 75 people through its acquisition by reAlpha",
+      "bullets": [
+        "Leadership and progression: Advanced from Software Engineer to Tech Lead and Engineering Manager, leading cross-functional delivery while remaining hands-on across backend, frontend, infrastructure, and LLM products.",
+        "Engineering standards: Established architecture, code review, QA, design, and release practices across multiple product teams, improving consistency across the delivery lifecycle.",
+        "Technical delivery: Owned system design, API contracts, CI/CD pipelines, AWS deployments, and production iteration for client and internal products.",
+        "Backend and data: Designed Node.js and TypeScript services and GraphQL APIs backed by PostgreSQL; applied caching and query tuning when justified by load.",
+        "Planning and stakeholder management: Scoped ambiguous requirements into technical plans and estimates with stakeholders across the US, Nepal, Indonesia, and Singapore; aligned engineering capacity with portfolio priorities.",
+        "AI platform: Rebuilt AiChat's conversational AI platform with prompt orchestration, grounded responses, async messaging, observability, model-cost controls, and WhatsApp, Messenger, and Instagram integrations."
+      ]
+    },
+    {
+      "company": "Leapfrog Technology",
+      "title": "Software Engineer | Associate Software Engineer",
+      "period": "2019 - 2021",
+      "location": "Kathmandu",
+      "context": "EdTech and HealthTech products",
+      "bullets": [
+        "Product delivery: Built and shipped web and mobile applications using REST APIs, relational data models, and frontend state management.",
+        "Software delivery: Translated product specifications into implementation plans, tasks, estimates, and production releases while progressing from Associate Software Engineer to Software Engineer.",
+        "Team development: Mentored engineers and interns on Node.js API development, service structure, code review, and testing; interviewed candidates and coordinated Leapfrog's first Data Internship cohort."
+      ]
+    },
+    {
+      "company": "Independent Product and Client Work",
+      "title": "Full-Stack Engineer",
+      "period": "Ongoing",
+      "location": "Remote",
+      "context": "Concurrent product building and selective freelance engagements",
+      "bullets": [
+        "Client delivery: Delivered full-stack web and mobile applications for WealthTech and Upwork clients, from data modeling and API design through CI/CD and release.",
+        "Integrations: Integrated third-party services and built reliable data pipelines for inbound and outbound data exchange.",
+        "Product exploration: Built founder-led proof-of-concepts for market and technical validation, plus an internal employee operations system."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "murmur",
+      "name": "Murmur",
+      "link": "murmurapplication.com",
+      "description": "Voice-first productivity app that converts speech into structured notes, tasks, and reminders; built with React Native, Supabase, Calendar API, and LLM workflows; released on Google Play.",
+      "stack": "React Native, Supabase, Calendar API, LLM"
+    },
+    {
+      "slug": "bctnotes",
+      "name": "BCTNotes",
+      "link": "aakritsubedi9.com.np",
+      "description": "Founded and built a resource-sharing platform for Computer Engineering students; serves 14,000+ learners with notes, past papers, and study materials.",
+      "stack": "Next.js, TypeScript, NestJS"
+    },
+    {
+      "slug": "nepse-ai",
+      "name": "NEPSE AI",
+      "link": "instagram.com/nepse.ai",
+      "description": "Built an automated market-insights pipeline that ingests daily NEPSE trading data, generates daily and weekly summaries with LLMs, and publishes to Instagram without human intervention.",
+      "stack": "Next.js, TypeScript, NestJS, LLM"
+    },
+    {
+      "slug": "meroshare-plus",
+      "name": "MeroShare Plus",
+      "link": "meroshare-plus.netlify.app",
+      "description": "Built a portfolio intelligence tool for NEPSE investors that tracks holdings daily and layers LLM-generated analysis on what moved and why.",
+      "stack": "Next.js, LLM, IndexedDB"
+    },
+    {
+      "slug": "obol",
+      "name": "Obol",
+      "link": "github.com/aakritsubedi/Obol",
+      "description": "Built a local-only, real-time AI credit tracker for Claude Code, Codex CLI, and OpenCode; no telemetry or accounts.",
+      "stack": "Swift, Vite, Tailwind CSS"
+    },
+    {
+      "slug": "sheets2api",
+      "name": "Sheets2API",
+      "link": "sheets2api.pro",
+      "description": "Built a Google Sheets-to-REST API service with read and write endpoints for MVPs and internal tools, using Next.js, TypeScript, NestJS, and LLM workflows.",
+      "stack": "Next.js, TypeScript, NestJS, LLM"
+    }
+  ],
+  "skills": [
+    {
+      "label": "Languages",
+      "items": ["TypeScript", "JavaScript", "Python", "Swift", "SQL"]
+    },
+    {
+      "label": "Backend & APIs",
+      "items": ["Node.js", "NestJS", "Express", "GraphQL", "REST APIs", "API design"]
+    },
+    {
+      "label": "Data & Storage",
+      "items": ["PostgreSQL", "Supabase", "SQL", "Relational data modeling", "Caching", "Query optimization"]
+    },
+    {
+      "label": "Frontend & Mobile",
+      "items": ["React", "Next.js", "React Native", "Tailwind CSS"]
+    },
+    {
+      "label": "Cloud & Delivery",
+      "items": ["AWS", "Vercel", "CI/CD", "Observability", "Production deployments"]
+    },
+    {
+      "label": "AI & LLM",
+      "items": ["Prompt orchestration", "Grounded retrieval", "Evaluation", "Model-cost management"]
+    },
+    {
+      "label": "Leadership & Delivery",
+      "items": ["System design", "Architecture", "Technical planning", "Code review", "Hiring", "Mentoring", "Agile delivery"]
+    }
+  ],
+  "education": [
+    {
+      "qualification": "Bachelor of Computer Engineering",
+      "institution": "Kantipur Engineering College, Tribhuvan University",
+      "period": "2015 - 2019",
+      "details": [
+        "Full merit scholarship; Best Software Award, LITE 2018; Computer Club member.",
+        "Major project: Derm Meds, a CNN-based skin cancer staging application with a Flask API and datasets reviewed with clinicians at DISHARC."
+      ]
+    },
+    {
+      "qualification": "+2 Science",
+      "institution": "National School of Science (NIST), Kathmandu",
+      "period": "2013 - 2014",
+      "details": ["Partial academic scholarship."]
+    }
+  ],
+  "awards": [
+    "Best Software Project, LOCUS 2018, IOE Pulchowk - ERP software; nationwide competition.",
+    "People's Choice Best Project, LOCUS 2017, IOE Pulchowk - tourism platform; nationwide competition.",
+    "Finalist, Ncell App Camp 2015 - led a four-person team building a cab-booking application.",
+    "Founded BCTNotes, a study-resource community serving 14,000+ engineering students.",
+    "Delivered technical talks, mentored engineering students and hackathon teams, and taught programming part-time.",
+    "Published technical writing on software engineering and product development at Medium."
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "scale": 1.1,
+  "page": {
+    "size": "letter",
+    "margins": {
+      "left": 38.9,
+      "right": 38.9,
+      "top": 28.8,
+      "bottom": 34.6
+    },
+    "footer": {
+      "enabled": false,
+      "skipFirstPage": false,
+      "y": 18,
+      "ruleOffset": 9
+    }
+  },
+  "colors": {
+    "ink": "#141414",
+    "muted": "#535353",
+    "rule": "#202020",
+    "footerRule": "#9a9a9a"
+  },
+  "rules": {
+    "primary": 0.8,
+    "footer": 0.4
+  },
+  "spacing": {
+    "headerRuleBefore": 3.6364,
+    "headerRuleAfter": 5.4545,
+    "sectionBefore": 7.2727,
+    "sectionRuleAfter": 4.5455,
+    "roleAfter": 5.4545,
+    "projectAfter": 5,
+    "educationAfter": 3.1818,
+    "skillRowPadding": 1.0909
+  },
+  "tables": {
+    "rolePeriodWidth": 94,
+    "roleLocationWidth": 112,
+    "skillLabelWidth": 112
+  },
+  "styles": {
+    "name": {
+      "fontName": "Helvetica-Bold",
+      "fontSize": 18.1818,
+      "leading": 20.9091,
+      "alignment": "center",
+      "textColor": "ink",
+      "spaceAfter": 0
+    },
+    "headline": {
+      "fontName": "Helvetica",
+      "fontSize": 9.4545,
+      "leading": 11.3636,
+      "alignment": "center",
+      "textColor": "muted",
+      "spaceAfter": 1.8182
+    },
+    "contact": {
+      "fontName": "Helvetica",
+      "fontSize": 8.0909,
+      "leading": 9.8182,
+      "alignment": "center",
+      "textColor": "ink",
+      "spaceAfter": 0
+    },
+    "summary": {
+      "fontName": "Helvetica",
+      "fontSize": 8.6364,
+      "leading": 10.9091,
+      "alignment": "left",
+      "textColor": "ink",
+      "spaceAfter": 0
+    },
+    "section": {
+      "fontName": "Helvetica-Bold",
+      "fontSize": 9.2727,
+      "leading": 10.9091,
+      "alignment": "left",
+      "textColor": "ink",
+      "spaceAfter": 0.9091
+    },
+    "company": {
+      "fontName": "Helvetica-Bold",
+      "fontSize": 9.2727,
+      "leading": 10.9091,
+      "alignment": "left",
+      "textColor": "ink"
+    },
+    "note": {
+      "fontName": "Helvetica-Oblique",
+      "fontSize": 7.6364,
+      "leading": 9.2727,
+      "alignment": "left",
+      "textColor": "muted"
+    },
+    "period": {
+      "fontName": "Helvetica",
+      "fontSize": 8.0909,
+      "leading": 9.8182,
+      "alignment": "right",
+      "textColor": "muted"
+    },
+    "role": {
+      "fontName": "Helvetica-Bold",
+      "fontSize": 8.5455,
+      "leading": 10,
+      "alignment": "left",
+      "textColor": "ink"
+    },
+    "location": {
+      "fontName": "Helvetica",
+      "fontSize": 7.8182,
+      "leading": 9.5455,
+      "alignment": "right",
+      "textColor": "muted"
+    },
+    "context": {
+      "fontName": "Helvetica-Oblique",
+      "fontSize": 7.7273,
+      "leading": 9.2727,
+      "alignment": "left",
+      "textColor": "muted",
+      "spaceAfter": 2.5
+    },
+    "bullet": {
+      "fontName": "Helvetica",
+      "fontSize": 8.6364,
+      "leading": 10.9091,
+      "alignment": "left",
+      "textColor": "ink",
+      "leftIndent": 10,
+      "firstLineIndent": 0,
+      "bulletIndent": 2.7273,
+      "spaceAfter": 2.7
+    },
+    "projectHead": {
+      "fontName": "Helvetica",
+      "fontSize": 8.6364,
+      "leading": 10.6364,
+      "alignment": "left",
+      "textColor": "ink",
+      "spaceAfter": 0.9091
+    },
+    "projectBody": {
+      "fontName": "Helvetica",
+      "fontSize": 8.3636,
+      "leading": 10.6364,
+      "alignment": "left",
+      "textColor": "ink",
+      "spaceAfter": 0
+    },
+    "stack": {
+      "fontName": "Helvetica-Oblique",
+      "fontSize": 7.6364,
+      "leading": 9.2727,
+      "alignment": "left",
+      "textColor": "muted",
+      "spaceAfter": 0
+    },
+    "skillLabel": {
+      "fontName": "Helvetica-Bold",
+      "fontSize": 8.1818,
+      "leading": 10,
+      "alignment": "left",
+      "textColor": "ink"
+    },
+    "skillItems": {
+      "fontName": "Helvetica",
+      "fontSize": 8.0909,
+      "leading": 10,
+      "alignment": "left",
+      "textColor": "ink"
+    },
+    "educationBody": {
+      "fontName": "Helvetica",
+      "fontSize": 8.0909,
+      "leading": 10,
+      "alignment": "left",
+      "textColor": "ink",
+      "spaceAfter": 1.1
+    },
+    "footer": {
+      "fontName": "Helvetica",
+      "fontSize": 6.7273,
+      "leading": 7.2727,
+      "alignment": "left",
+      "textColor": "muted"
+    }
+  },
+  "overrides": {}
+}

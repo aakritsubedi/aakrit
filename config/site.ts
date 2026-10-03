@@ -1,3 +1,5 @@
+import profile from "./profile.json";
+
 /**
  * Single source of truth for everything machine-readable about this site:
  * metadata, sitemap, robots, llms.txt, JSON-LD, and the markdown variants
@@ -11,7 +13,7 @@
  * the canonical origin. If that redirect is ever flipped, change this one
  * value and canonical URLs, og:url, the sitemap and llms.txt all follow.
  */
-export const siteUrl = "https://www.aakritsubedi.com.np";
+export const siteUrl = profile.siteUrl;
 
 export function absoluteUrl(path: string): string {
   if (path === "/") return `${siteUrl}/`;
@@ -20,43 +22,40 @@ export function absoluteUrl(path: string): string {
 
 export const siteName = "Aakrit Subedi";
 
+type Person = {
+  name: string;
+  jobTitle: string;
+  description: string;
+  email: string;
+  /**
+   * Deliberately absent: the phone number is not published anywhere on this
+   * site or in the résumé PDF. The JSON-LD contactPoint falls back to
+   * email-only when it is missing, so setting it here is the only change
+   * needed to start publishing one again.
+   */
+  telephone?: string;
+  image: string;
+  resume: string;
+  address: { locality: string; region: string; country: string };
+  sameAs: readonly string[];
+  knowsAbout: readonly string[];
+};
+
 /**
  * Identity facts. These back the JSON-LD graph, the contact page and the
  * markdown variants, so they only get written down once.
  */
-export const person = {
-  name: "Aakrit Subedi",
-  jobTitle: "Software Engineer",
-  description:
-    "Software engineer and engineering manager based in Kathmandu, Nepal. Builds and leads full-stack product teams, works hands-on across backend, frontend and infrastructure, and ships LLM-backed products.",
-  email: "aakritsubedi9@gmail.com",
-  telephone: "+977-98XXXXXXX",
-  image: absoluteUrl("/og-image.png"),
-  resume: absoluteUrl("/AakritSubedi.pdf"),
-  address: {
-    locality: "Kathmandu",
-    region: "Bagmati Province",
-    country: "NP",
-  },
-  sameAs: [
-    "https://github.com/aakritsubedi",
-    "https://www.linkedin.com/in/aakrit-subedi",
-    "https://twitter.com/SubediAakrit",
-    "https://medium.com/@subediaakrit",
-  ],
-  knowsAbout: [
-    "Full-stack web development",
-    "Engineering management",
-    "TypeScript",
-    "Node.js",
-    "React",
-    "Next.js",
-    "PostgreSQL",
-    "GraphQL",
-    "AWS",
-    "LLM application development",
-  ],
-} as const;
+export const person: Person = {
+  name: profile.name,
+  jobTitle: profile.jobTitle,
+  description: profile.description,
+  email: profile.email,
+  image: absoluteUrl(profile.imagePath),
+  resume: absoluteUrl(profile.resumePath),
+  address: profile.address,
+  sameAs: profile.sameAs,
+  knowsAbout: profile.knowsAbout,
+};
 
 export type SiteRoute = {
   /** Path as served, always leading-slash and never trailing-slash (except "/") */
@@ -122,6 +121,16 @@ export const siteRoutes: SiteRoute[] = [
       "Confirming academic credentials, institutions and graduation years.",
     priority: 0.6,
     changeFrequency: "yearly",
+  },
+  {
+    path: "/cv",
+    title: "CV | Aakrit Subedi",
+    description:
+      "One-document résumé: roles and dates, selected shipped projects, technical skills, education and awards.",
+    agentUseCase:
+      "Getting the whole professional history as a single structured document, rather than assembling it from /work, /projects and /education.",
+    priority: 0.8,
+    changeFrequency: "monthly",
   },
   {
     path: "/contact",

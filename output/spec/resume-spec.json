@@ -1,0 +1,511 @@
+{
+  "blocks": [
+    {
+      "contact": [
+        {
+          "label": "Kathmandu, Nepal"
+        },
+        {
+          "href": "mailto:aakritsubedi9@gmail.com",
+          "label": "aakritsubedi9@gmail.com"
+        },
+        {
+          "href": "https://www.aakritsubedi.com.np",
+          "label": "aakritsubedi.com.np"
+        },
+        {
+          "href": "https://github.com/aakritsubedi",
+          "label": "github.com/aakritsubedi"
+        },
+        {
+          "href": "https://www.linkedin.com/in/aakrit-subedi",
+          "label": "linkedin.com/in/aakrit-subedi"
+        }
+      ],
+      "headline": "Engineering Manager | Technical Lead | Full-Stack & AI Product Engineer",
+      "name": "Aakrit Subedi",
+      "separator": " · ",
+      "type": "header"
+    },
+    {
+      "type": "rule",
+      "variant": "primary"
+    },
+    {
+      "text": "Engineering manager and hands-on full-stack engineer with 6+ years building and leading web, mobile, and AI products. Progressed from Associate Software Engineer to Software Engineer, Tech Lead, and Engineering Manager across Leapfrog Technology and Naamche/reAlpha, and now Lead Engineer at Cantordust building pharmaceutical document intelligence. Led architecture, technical planning, delivery, and team development while shipping TypeScript and Node.js services, React applications, GraphQL APIs, PostgreSQL data models, AWS infrastructure, and LLM-powered features.",
+      "type": "summary"
+    },
+    {
+      "id": "skills",
+      "title": "TECHNICAL SKILLS",
+      "type": "section"
+    },
+    {
+      "rows": [
+        {
+          "items": "TypeScript, JavaScript, Python, Swift, SQL",
+          "label": "Languages"
+        },
+        {
+          "items": "Node.js, NestJS, Express, GraphQL, REST APIs, API design",
+          "label": "Backend & APIs"
+        },
+        {
+          "items": "PostgreSQL, Supabase, SQL, Relational data modeling, Caching, Query optimization",
+          "label": "Data & Storage"
+        },
+        {
+          "items": "React, Next.js, React Native, Tailwind CSS",
+          "label": "Frontend & Mobile"
+        },
+        {
+          "items": "AWS, Vercel, CI/CD, Observability, Production deployments",
+          "label": "Cloud & Delivery"
+        },
+        {
+          "items": "Prompt orchestration, Grounded retrieval, Evaluation, Model-cost management",
+          "label": "AI & LLM"
+        },
+        {
+          "items": "System design, Architecture, Technical planning, Code review, Hiring, Mentoring, Agile delivery",
+          "label": "Leadership & Delivery"
+        }
+      ],
+      "type": "skills"
+    },
+    {
+      "id": "experience",
+      "title": "PROFESSIONAL EXPERIENCE",
+      "type": "section"
+    },
+    {
+      "bullets": [
+        {
+          "lead": "Document pipeline",
+          "text": "Building the ingestion and processing pipeline that parses raw pharmaceutical documents into structured, queryable data models."
+        },
+        {
+          "lead": "Architecture",
+          "text": "Owning architecture across services, data model, retrieval layer, and the infrastructure it runs on."
+        },
+        {
+          "lead": "Engineering foundations",
+          "text": "Setting up repository structure, CI, deployments, and review practices for an early-stage product while scoping work with the team and domain experts."
+        }
+      ],
+      "company": "Cantordust",
+      "context": "Early-stage pharmaceutical document intelligence product",
+      "location": "Kathmandu / Remote",
+      "note": null,
+      "period": "2026 - Present",
+      "title": "Lead Engineer",
+      "type": "role"
+    },
+    {
+      "bullets": [
+        {
+          "lead": "Leadership and progression",
+          "text": "Advanced from Software Engineer to Tech Lead and Engineering Manager, leading cross-functional delivery while remaining hands-on across backend, frontend, infrastructure, and LLM products."
+        },
+        {
+          "lead": "Engineering standards",
+          "text": "Established architecture, code review, QA, design, and release practices across multiple product teams, improving consistency across the delivery lifecycle."
+        },
+        {
+          "lead": "Technical delivery",
+          "text": "Owned system design, API contracts, CI/CD pipelines, AWS deployments, and production iteration for client and internal products."
+        },
+        {
+          "lead": "Backend and data",
+          "text": "Designed Node.js and TypeScript services and GraphQL APIs backed by PostgreSQL; applied caching and query tuning when justified by load."
+        },
+        {
+          "lead": "Planning and stakeholder management",
+          "text": "Scoped ambiguous requirements into technical plans and estimates with stakeholders across the US, Nepal, Indonesia, and Singapore; aligned engineering capacity with portfolio priorities."
+        },
+        {
+          "lead": "AI platform",
+          "text": "Rebuilt AiChat's conversational AI platform with prompt orchestration, grounded responses, async messaging, observability, model-cost controls, and WhatsApp, Messenger, and Instagram integrations."
+        }
+      ],
+      "company": "reAlpha / Naamche Inc.",
+      "context": "Joined Naamche as one of seven engineers and grew with the company beyond 75 people through its acquisition by reAlpha",
+      "location": "Kathmandu / Remote",
+      "note": "Naamche acquired by reAlpha, NASDAQ: AIRE",
+      "period": "2021 - 2026",
+      "title": "Engineering Manager | Tech Lead | Software Engineer",
+      "type": "role"
+    },
+    {
+      "bullets": [
+        {
+          "lead": "Product delivery",
+          "text": "Built and shipped web and mobile applications using REST APIs, relational data models, and frontend state management."
+        },
+        {
+          "lead": "Software delivery",
+          "text": "Translated product specifications into implementation plans, tasks, estimates, and production releases while progressing from Associate Software Engineer to Software Engineer."
+        },
+        {
+          "lead": "Team development",
+          "text": "Mentored engineers and interns on Node.js API development, service structure, code review, and testing; interviewed candidates and coordinated Leapfrog's first Data Internship cohort."
+        }
+      ],
+      "company": "Leapfrog Technology",
+      "context": "EdTech and HealthTech products",
+      "location": "Kathmandu",
+      "note": null,
+      "period": "2019 - 2021",
+      "title": "Software Engineer | Associate Software Engineer",
+      "type": "role"
+    },
+    {
+      "bullets": [
+        {
+          "lead": "Client delivery",
+          "text": "Delivered full-stack web and mobile applications for WealthTech and Upwork clients, from data modeling and API design through CI/CD and release."
+        },
+        {
+          "lead": "Integrations",
+          "text": "Integrated third-party services and built reliable data pipelines for inbound and outbound data exchange."
+        },
+        {
+          "lead": "Product exploration",
+          "text": "Built founder-led proof-of-concepts for market and technical validation, plus an internal employee operations system."
+        }
+      ],
+      "company": "Independent Product and Client Work",
+      "context": "Concurrent product building and selective freelance engagements",
+      "location": "Remote",
+      "note": null,
+      "period": "Ongoing",
+      "title": "Full-Stack Engineer",
+      "type": "role"
+    },
+    {
+      "id": "projects",
+      "title": "SELECTED PROJECTS",
+      "type": "section"
+    },
+    {
+      "description": "Voice-first productivity app that converts speech into structured notes, tasks, and reminders; built with React Native, Supabase, Calendar API, and LLM workflows; released on Google Play.",
+      "link": {
+        "href": "https://murmurapplication.com",
+        "label": "murmurapplication.com"
+      },
+      "name": "Murmur",
+      "stack": "Stack: React Native, Supabase, Calendar API, LLM",
+      "type": "project"
+    },
+    {
+      "description": "Founded and built a resource-sharing platform for Computer Engineering students; serves 14,000+ learners with notes, past papers, and study materials.",
+      "link": {
+        "href": "https://aakritsubedi9.com.np",
+        "label": "aakritsubedi9.com.np"
+      },
+      "name": "BCTNotes",
+      "stack": "Stack: Next.js, TypeScript, NestJS",
+      "type": "project"
+    },
+    {
+      "description": "Built an automated market-insights pipeline that ingests daily NEPSE trading data, generates daily and weekly summaries with LLMs, and publishes to Instagram without human intervention.",
+      "link": {
+        "href": "https://instagram.com/nepse.ai",
+        "label": "instagram.com/nepse.ai"
+      },
+      "name": "NEPSE AI",
+      "stack": "Stack: Next.js, TypeScript, NestJS, LLM",
+      "type": "project"
+    },
+    {
+      "description": "Built a portfolio intelligence tool for NEPSE investors that tracks holdings daily and layers LLM-generated analysis on what moved and why.",
+      "link": {
+        "href": "https://meroshare-plus.netlify.app",
+        "label": "meroshare-plus.netlify.app"
+      },
+      "name": "MeroShare Plus",
+      "stack": "Stack: Next.js, LLM, IndexedDB",
+      "type": "project"
+    },
+    {
+      "description": "Built a local-only, real-time AI credit tracker for Claude Code, Codex CLI, and OpenCode; no telemetry or accounts.",
+      "link": {
+        "href": "https://github.com/aakritsubedi/Obol",
+        "label": "github.com/aakritsubedi/Obol"
+      },
+      "name": "Obol",
+      "stack": "Stack: Swift, Vite, Tailwind CSS",
+      "type": "project"
+    },
+    {
+      "description": "Built a Google Sheets-to-REST API service with read and write endpoints for MVPs and internal tools, using Next.js, TypeScript, NestJS, and LLM workflows.",
+      "link": {
+        "href": "https://sheets2api.pro",
+        "label": "sheets2api.pro"
+      },
+      "name": "Sheets2API",
+      "stack": "Stack: Next.js, TypeScript, NestJS, LLM",
+      "type": "project"
+    },
+    {
+      "id": "education",
+      "title": "EDUCATION",
+      "type": "section"
+    },
+    {
+      "details": [
+        {
+          "text": "Full merit scholarship; Best Software Award, LITE 2018; Computer Club member."
+        },
+        {
+          "text": "Major project: Derm Meds, a CNN-based skin cancer staging application with a Flask API and datasets reviewed with clinicians at DISHARC."
+        }
+      ],
+      "institution": "Kantipur Engineering College, Tribhuvan University",
+      "period": "2015 - 2019",
+      "qualification": "Bachelor of Computer Engineering",
+      "type": "education"
+    },
+    {
+      "details": [
+        {
+          "text": "Partial academic scholarship."
+        }
+      ],
+      "institution": "National School of Science (NIST), Kathmandu",
+      "period": "2013 - 2014",
+      "qualification": "+2 Science",
+      "type": "education"
+    },
+    {
+      "id": "recognition",
+      "title": "AWARDS & COMMUNITY",
+      "type": "section"
+    },
+    {
+      "items": [
+        {
+          "text": "Best Software Project, LOCUS 2018, IOE Pulchowk - ERP software; nationwide competition."
+        },
+        {
+          "text": "People's Choice Best Project, LOCUS 2017, IOE Pulchowk - tourism platform; nationwide competition."
+        },
+        {
+          "text": "Finalist, Ncell App Camp 2015 - led a four-person team building a cab-booking application."
+        },
+        {
+          "text": "Founded BCTNotes, a study-resource community serving 14,000+ engineering students."
+        },
+        {
+          "text": "Delivered technical talks, mentored engineering students and hackathon teams, and taught programming part-time."
+        },
+        {
+          "text": "Published technical writing on software engineering and product development at Medium."
+        }
+      ],
+      "type": "bulletList"
+    }
+  ],
+  "meta": {
+    "author": "Aakrit Subedi",
+    "creator": "Aakrit Subedi resume specification builder",
+    "generatedAt": "2026-10-03T01:16:40Z",
+    "subject": "Engineering management and full-stack software engineering resume",
+    "title": "Aakrit Subedi - Resume"
+  },
+  "page": {
+    "footer": {
+      "enabled": false,
+      "left": "Aakrit Subedi | aakritsubedi.com.np",
+      "right": "Page {page}",
+      "ruleOffset": 9,
+      "skipFirstPage": false,
+      "y": 18
+    },
+    "margins": {
+      "bottom": 34.6,
+      "left": 38.9,
+      "right": 38.9,
+      "top": 28.8
+    },
+    "size": "letter"
+  },
+  "schema": "resume-spec/v1",
+  "styles": {
+    "bullet": {
+      "alignment": "left",
+      "bulletIndent": 3,
+      "firstLineIndent": 0,
+      "fontName": "Helvetica",
+      "fontSize": 9.5,
+      "leading": 12,
+      "leftIndent": 11,
+      "spaceAfter": 2.97,
+      "textColor": "ink"
+    },
+    "company": {
+      "alignment": "left",
+      "fontName": "Helvetica-Bold",
+      "fontSize": 10.2,
+      "leading": 12,
+      "textColor": "ink"
+    },
+    "contact": {
+      "alignment": "center",
+      "fontName": "Helvetica",
+      "fontSize": 8.9,
+      "leading": 10.8,
+      "spaceAfter": 0,
+      "textColor": "ink"
+    },
+    "context": {
+      "alignment": "left",
+      "fontName": "Helvetica-Oblique",
+      "fontSize": 8.5,
+      "leading": 10.2,
+      "spaceAfter": 2.75,
+      "textColor": "muted"
+    },
+    "educationBody": {
+      "alignment": "left",
+      "fontName": "Helvetica",
+      "fontSize": 8.9,
+      "leading": 11,
+      "spaceAfter": 1.21,
+      "textColor": "ink"
+    },
+    "footer": {
+      "alignment": "left",
+      "fontName": "Helvetica",
+      "fontSize": 7.4,
+      "leading": 8,
+      "textColor": "muted"
+    },
+    "headline": {
+      "alignment": "center",
+      "fontName": "Helvetica",
+      "fontSize": 10.4,
+      "leading": 12.5,
+      "spaceAfter": 2,
+      "textColor": "muted"
+    },
+    "location": {
+      "alignment": "right",
+      "fontName": "Helvetica",
+      "fontSize": 8.6,
+      "leading": 10.5,
+      "textColor": "muted"
+    },
+    "name": {
+      "alignment": "center",
+      "fontName": "Helvetica-Bold",
+      "fontSize": 20,
+      "leading": 23,
+      "spaceAfter": 0,
+      "textColor": "ink"
+    },
+    "note": {
+      "alignment": "left",
+      "fontName": "Helvetica-Oblique",
+      "fontSize": 8.4,
+      "leading": 10.2,
+      "textColor": "muted"
+    },
+    "period": {
+      "alignment": "right",
+      "fontName": "Helvetica",
+      "fontSize": 8.9,
+      "leading": 10.8,
+      "textColor": "muted"
+    },
+    "projectBody": {
+      "alignment": "left",
+      "fontName": "Helvetica",
+      "fontSize": 9.2,
+      "leading": 11.7,
+      "spaceAfter": 0,
+      "textColor": "ink"
+    },
+    "projectHead": {
+      "alignment": "left",
+      "fontName": "Helvetica",
+      "fontSize": 9.5,
+      "leading": 11.7,
+      "spaceAfter": 1,
+      "textColor": "ink"
+    },
+    "role": {
+      "alignment": "left",
+      "fontName": "Helvetica-Bold",
+      "fontSize": 9.4,
+      "leading": 11,
+      "textColor": "ink"
+    },
+    "section": {
+      "alignment": "left",
+      "fontName": "Helvetica-Bold",
+      "fontSize": 10.2,
+      "leading": 12,
+      "spaceAfter": 1,
+      "textColor": "ink"
+    },
+    "skillItems": {
+      "alignment": "left",
+      "fontName": "Helvetica",
+      "fontSize": 8.9,
+      "leading": 11,
+      "textColor": "ink"
+    },
+    "skillLabel": {
+      "alignment": "left",
+      "fontName": "Helvetica-Bold",
+      "fontSize": 9,
+      "leading": 11,
+      "textColor": "ink"
+    },
+    "stack": {
+      "alignment": "left",
+      "fontName": "Helvetica-Oblique",
+      "fontSize": 8.4,
+      "leading": 10.2,
+      "spaceAfter": 0,
+      "textColor": "muted"
+    },
+    "summary": {
+      "alignment": "left",
+      "fontName": "Helvetica",
+      "fontSize": 9.5,
+      "leading": 12,
+      "spaceAfter": 0,
+      "textColor": "ink"
+    }
+  },
+  "theme": {
+    "colors": {
+      "footerRule": "#9a9a9a",
+      "ink": "#141414",
+      "muted": "#535353",
+      "rule": "#202020"
+    },
+    "rules": {
+      "footer": 0.4,
+      "primary": 0.8
+    },
+    "scale": 1.1,
+    "spacing": {
+      "educationAfter": 3.5,
+      "headerRuleAfter": 6,
+      "headerRuleBefore": 4,
+      "projectAfter": 5.5,
+      "roleAfter": 6,
+      "sectionBefore": 8,
+      "sectionRuleAfter": 5,
+      "skillRowPadding": 1.2
+    },
+    "tables": {
+      "roleLocationWidth": 112,
+      "rolePeriodWidth": 94,
+      "skillLabelWidth": 112
+    }
+  }
+}
