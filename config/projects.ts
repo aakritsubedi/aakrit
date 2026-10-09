@@ -22,6 +22,17 @@ export type Blog = {
 
 export const projects: Project[] = [
   {
+    title: "Tablio",
+    slug: "tablio",
+    description:
+      "A Mac menu bar app that turns texts to yourself into something useful. Send yourself an iMessage and it lands in Reminders, Calendar, your todos, links or notes, with a reply in the same thread. Everything runs on your Mac — no account, no server reading your messages.",
+    status: "Available for Mac",
+    thumbnail: "/projects/tablio-thumbnail.png",
+    techStacks: ["Swift", "SwiftUI", "On-device AI", "EventKit"],
+    link: "https://tablio.aakritsubedi.com.np/",
+    logo: "/projects/tablio.png",
+  },
+  {
     title: "Murmur",
     slug: "murmur",
     description:
